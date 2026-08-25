@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://duzcefeyzadbeauty.com/sitemap.xml
+Sitemap: https://frostaqemelih.github.io/duzce-feyza-d-beauty/sitemap.xml
