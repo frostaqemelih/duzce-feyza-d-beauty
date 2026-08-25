@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Düzce Feyza D. Beauty | Güzellik Salonu</title>
+<meta name="description" content="Düzce'de lazer epilasyon, cilt bakımı, kaş-dudak renklendirme ve protez tırnak. Feyza D. Beauty'de randevunuzu alın." />
+<meta property="og:title" content="Düzce Feyza D. Beauty | Güzellik Salonu" />
+<meta property="og:description" content="Düzce Aziziye'de lazer epilasyon, cilt bakımı, kaş & dudak renklendirme ve protez tırnak. 4,7 puan · 53 yorum." />
+<meta property="og:image" content="images/hero.webp" />
+<meta property="og:image:width" content="1920" />
+<meta property="og:image:height" content="1080" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="tr_TR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Düzce Feyza D. Beauty | Güzellik Salonu" />
+<meta name="twitter:description" content="Düzce Aziziye'de lazer epilasyon, cilt bakımı, kaş & dudak renklendirme ve protez tırnak. 4,7 puan · 53 yorum." />
+<meta name="twitter:image" content="images/hero.webp" />
+<!-- TODO (yayına almadan önce): og:url ve og:image'i, ve JSON-LD içindeki "url" alanını gerçek alan adınızla (https://...) mutlak URL'e güncelleyin. -->
+<!-- TODO: Google Search Console doğrulama etiketini buraya ekleyin, örn: <meta name="google-site-verification" content="..." /> -->
+<link rel="canonical" href="https://duzcefeyzadbeauty.com/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💛</text></svg>" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "Düzce Feyza D. Beauty",
+  "image": "https://duzcefeyzadbeauty.com/images/hero.webp",
+  "telephone": "+905347049081",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Aziziye, İstanbul Cd. No:151 C",
+    "addressLocality": "Düzce",
+    "postalCode": "81010",
+    "addressCountry": "TR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 40.840294, "longitude": 31.139005 },
+  "url": "https://duzcefeyzadbeauty.com/",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "53" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Randevu nasıl alabilirim?", "acceptedAnswer": { "@type": "Answer", "text": "Sitedeki randevu formunu doldurup WhatsApp üzerinden gönderebilir, ya da doğrudan 0534 704 90 81 numaralı telefonu arayabilirsiniz." } },
+    { "@type": "Question", "name": "Hangi hizmetleri sunuyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Lazer epilasyon, cilt bakımı, kaş & dudak renklendirme, protez tırnak & manikür, zayıflama cihazları ve kaş alımı & şekillendirme hizmetleri sunuyoruz." } },
+    { "@type": "Question", "name": "Salonunuz tam olarak nerede?", "acceptedAnswer": { "@type": "Answer", "text": "Aziziye, İstanbul Cd. No:151 C, 81010 Düzce adresindeyiz." } },
+    { "@type": "Question", "name": "Hijyen konusunda neler yapıyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Danışanlarımız Google yorumlarında salonumuzu sıklıkla temiz ve hijyenik olarak tanımlıyor; bu bizim için önceliklerimizin başında geliyor." } },
+    { "@type": "Question", "name": "Randevumu değiştirmem veya iptal etmem gerekirse ne yapmalıyım?", "acceptedAnswer": { "@type": "Answer", "text": "Lütfen mümkün olan en kısa sürede 0534 704 90 81 numaralı telefondan bize ulaşın." } }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Intro loader -->
+<div class="loader" id="loader" aria-hidden="true">
+  <span class="loader-mark">FD</span>
+</div>
+
+<!-- Custom cursor (desktop only, see JS/CSS pointer:fine gate) -->
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-progress" id="scroll-progress"></div>
+
+<header id="site-header" class="header">
+  <div class="header-inner">
+    <a href="#top" class="logo" data-magnetic>
+      <span class="logo-top">Feyza D.</span>
+      <span class="logo-bottom">Beauty</span>
+    </a>
+    <nav class="nav">
+      <a href="#hizmetler"><span>Hizmetler</span></a>
+      <a href="#galeri"><span>Galeri</span></a>
+      <a href="#yorumlar"><span>Yorumlar</span></a>
+      <a href="#randevu"><span>Randevu</span></a>
+    </nav>
+    <a href="tel:+905347049081" class="header-phone" data-magnetic>0534 704 90 81</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO — asymmetric editorial split -->
+  <section id="top" class="hero-wrap">
+    <span class="hero-spine">DÜZCE — GÜZELLİK ATÖLYESİ — EST. 2026 — DÜZCE — GÜZELLİK ATÖLYESİ —</span>
+
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="hero-eyebrow" data-reveal><span class="eyebrow-line"></span>Aziziye, Düzce</p>
+        <h1 class="hero-title" data-reveal>
+          <span class="ht-row">Zarafetin</span>
+          <span class="ht-row ht-italic">güzellik</span>
+          <span class="ht-row">atölyesi</span>
+        </h1>
+        <p class="hero-sub" data-reveal>Lazer epilasyon, cilt bakımı, kaş &amp; dudak renklendirme ve protez tırnak — uzman ellerde, Düzce'nin güvenilir adresinde.</p>
+        <div class="hero-actions" data-reveal>
+          <a href="#randevu" class="btn btn-primary" data-magnetic><span>Randevu Al</span> <svg viewBox="0 0 24 24" class="icon"><path d="M7 7h10v10M7 17 17 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#hizmetler" class="btn btn-line" data-magnetic><span>Hizmetler</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-frame"></div>
+        <div class="hero-image" role="img" aria-label="Feyza D. Beauty güzellik atölyesi atmosferi" style="background-image:url(images/hero.webp)"></div>
+        <div class="hero-rating" data-reveal>
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p><span class="count-up" data-target="4.7" data-decimals="1">0</span> <small>/ 5</small></p>
+          <p class="hero-rating-sub"><span class="count-up" data-target="53">0</span> Google yorumu</p>
+        </div>
+        <div class="hero-float" data-reveal>
+          <p class="float-label">Uzman Ekip</p>
+          <p class="float-name">Melda &amp; Aleyna Hanım</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>Lazer Epilasyon</span><i>✦</i><span>Cilt Bakımı</span><i>✦</i><span>Kaş &amp; Dudak Renklendirme</span><i>✦</i><span>Protez Tırnak</span><i>✦</i><span>Zayıflama Cihazları</span><i>✦</i><span>Kaş Alımı</span><i>✦</i>
+        <span>Lazer Epilasyon</span><i>✦</i><span>Cilt Bakımı</span><i>✦</i><span>Kaş &amp; Dudak Renklendirme</span><i>✦</i><span>Protez Tırnak</span><i>✦</i><span>Zayıflama Cihazları</span><i>✦</i><span>Kaş Alımı</span><i>✦</i>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES — editorial index list -->
+  <section id="hizmetler" class="section">
+    <span class="section-numeral">01</span>
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>İndeks — Hizmetlerimiz</p>
+        <h2 class="section-title" data-split>Uzman ellerde bakım</h2>
+      </div>
+
+      <div class="service-list">
+        <div class="service-row" data-reveal-stagger>
+          <span class="service-index">01</span>
+          <div class="service-main"><h3>Lazer Epilasyon</h3><p>Konforlu ve etkili tüy azaltma, tüm cilt tiplerine uygun seans planı.</p></div>
+          <span class="service-thumb"><img src="images/laser-device.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">30–60 dk</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-reveal-stagger>
+          <span class="service-index">02</span>
+          <div class="service-main"><h3>Cilt Bakımı</h3><p>Derinlemesine temizlik ve bakım ürünleriyle canlanan, dinlenmiş bir cilt.</p></div>
+          <span class="service-thumb"><img src="images/skincare-facial.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">60–90 dk</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-reveal-stagger>
+          <span class="service-index">03</span>
+          <div class="service-main"><h3>Zayıflama Cihazları</h3><p>Bölgesel sıkılaştırma ve incelme için cihaz destekli seanslar.</p></div>
+          <span class="service-thumb"><img src="images/salon-interior.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">45 dk</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-reveal-stagger>
+          <span class="service-index">04</span>
+          <div class="service-main"><h3>Kaş &amp; Dudak Renklendirme</h3><p>Melda Hanım'ın elinden doğal, uzun ömürlü kaş ve dudak renklendirme.</p></div>
+          <span class="service-thumb"><img src="images/brow-lip-tint-1.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Melda Hanım</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-reveal-stagger>
+          <span class="service-index">05</span>
+          <div class="service-main"><h3>Protez Tırnak &amp; Manikür</h3><p>Aleyna Hanım'ın özenli işçiliğiyle uzun ömürlü, temiz protez tırnak.</p></div>
+          <span class="service-thumb"><img src="images/nail-detail.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Aleyna Hanım</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-reveal-stagger>
+          <span class="service-index">06</span>
+          <div class="service-main"><h3>Kaş Alımı &amp; Şekillendirme</h3><p>Yüz hatlarınıza uygun, doğal duruşlu kaş şekillendirme.</p></div>
+          <span class="service-thumb"><img src="images/nail-detail.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">15–30 dk</span>
+          <span class="service-arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERİ — flowing left-to-right photo filmstrip -->
+  <section id="galeri" class="section section-alt">
+    <span class="section-numeral">02</span>
+    <div class="section-inner">
+      <div class="section-head split">
+        <div>
+          <p class="eyebrow" data-reveal>İndeks — Galeri</p>
+          <h2 class="section-title" data-split>Atölyeden kareler</h2>
+        </div>
+        <p class="section-note" data-reveal>Sakin, zarif, güven veren bir atmosfer.</p>
+      </div>
+    </div>
+
+    <div class="gallery-rail-wrap">
+      <div class="gallery-rail" id="gallery-rail" data-reveal>
+        <figure class="gallery-card"><img src="images/salon-interior.webp" alt="Sıcak, zarif bir bakım odası atmosferi" loading="lazy" /><figcaption>Bakım Odası</figcaption></figure>
+        <figure class="gallery-card"><img src="images/laser-device.webp" alt="Lazer epilasyon cihazı, bakım odasında" loading="lazy" /><figcaption>Lazer Epilasyon</figcaption></figure>
+        <figure class="gallery-card"><img src="images/brow-lip-tint-1.webp" alt="Kaş ve dudak renklendirme uygulaması detayı" loading="lazy" /><figcaption>Kaş &amp; Dudak Renklendirme</figcaption></figure>
+        <figure class="gallery-card"><img src="images/nail-detail.webp" alt="Manikür ve protez tırnak detayı" loading="lazy" /><figcaption>Protez Tırnak</figcaption></figure>
+        <figure class="gallery-card"><img src="images/skincare-facial.webp" alt="Cilt bakımı ve yüz uygulaması detayı" loading="lazy" /><figcaption>Cilt Bakımı</figcaption></figure>
+      </div>
+      <div class="section-inner">
+        <div class="quote-nav gallery-nav">
+          <button type="button" id="gallery-prev" aria-label="Önceki fotoğraf">←</button>
+          <button type="button" id="gallery-next" aria-label="Sonraki fotoğraf">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONUM — standalone map -->
+  <section id="konum" class="section">
+    <span class="section-numeral">03</span>
+    <div class="section-inner">
+      <div class="section-head split">
+        <div>
+          <p class="eyebrow" data-reveal>İndeks — Konum</p>
+          <h2 class="section-title" data-split>Aziziye'de, kolay ulaşılır</h2>
+        </div>
+        <p class="section-note" data-reveal>Aziziye, İstanbul Cd. No:151 C, 81010 Düzce · Plus Code R4RQ+4J</p>
+      </div>
+
+      <div class="location-layout">
+        <div class="map-frame" data-reveal>
+          <iframe
+            title="Düzce Feyza D. Beauty konumu"
+            src="https://www.google.com/maps?q=D%C3%BCzce+Feyza+D.+Beauty,+Aziziye,+%C4%B0stanbul+Cd.+No:151+C,+81010+D%C3%BCzce&ll=40.840294,31.139005&z=16&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="location-card" data-reveal>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24" class="icon"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Aziziye, İstanbul Cd. No:151 C, 81010 Düzce
+          </div>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24" class="icon"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Açık · Kapanış saati 20:30
+          </div>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=D%C3%BCzce%20Feyza%20D.%20Beauty%2C%20Aziziye%2C%20%C4%B0stanbul%20Cd.%20No%3A151%20C%2C%2081010%20D%C3%BCzce" target="_blank" rel="noreferrer" class="btn btn-primary btn-block" data-magnetic>
+              <span>Yol Tarifi Al</span>
+              <svg viewBox="0 0 24 24" class="icon"><path d="M7 7h10v10M7 17 17 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS — wall of love -->
+  <section id="yorumlar" class="section">
+    <span class="section-numeral">04</span>
+    <div class="section-inner">
+      <div class="reviews-head">
+        <div class="stat-block" data-reveal>
+          <p class="eyebrow">İndeks — Danışanlarımız</p>
+          <p class="stat-huge"><span class="count-up" data-target="4.7" data-decimals="1">0</span></p>
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p class="stat-label"><span class="count-up" data-target="53">0</span> Google yorumu · ortalama puan</p>
+          <a href="https://www.google.com/maps/place/D%C3%BCzce+Feyza+D.+Beauty/@40.8403837,31.1391689,53m/data=!3m1!1e3!4m6!3m5!1s0x409d9fd4e00702ed:0x2aed1abb42dc3071!8m2!3d40.840294!4d31.1390048!16s%2Fg%2F11vsyrw37l!5m1!1e1?entry=ttu" target="_blank" rel="noreferrer" class="stat-link">Tüm yorumları gör →</a>
+        </div>
+
+        <div class="quote-rail-wrap">
+          <!-- TODO: Aslı Davran, Emir Zenbil ve Zeynep Zenbil'in Google yorumlarına ekledikleri fotoğraflar burada gösterilebilir — ancak önce kendilerinden kullanım izni alınmalı ve işletme tarafından gerçek dosyalar sağlanmalıdır (bkz. figcaption'a bir <img> eklenmesi yeterli). -->
+          <div class="quote-rail" id="quote-rail">
+            <figure class="quote-card">
+              <span class="quote-mark" aria-hidden="true">“</span>
+              <blockquote>Kaş ve dudak renklendirme işlemi için Melda hanıma çok teşekkür ederim, mükemmel oldu. Ayrıca protez tırnakta Aleyna hanım harika işler yapıyor, tüm işlemlerimden çok memnunum. İyi ki siz varsınız ❣️</blockquote>
+              <figcaption>
+                <span class="avatar">A</span>
+                <span class="reviewer-meta"><strong>Aslı Davran</strong><small>Google'da doğrulandı</small></span>
+              </figcaption>
+            </figure>
+            <figure class="quote-card">
+              <span class="quote-mark" aria-hidden="true">“</span>
+              <blockquote>Lazer yaptırdım, cilt bakımına geldim, manikür ve kaş alımı işlemi yaptırdım. İşinde gerçekten profesyoneller, Düzce'de gidilecek tek adres diyebilirim benim için 👍</blockquote>
+              <figcaption>
+                <span class="avatar">E</span>
+                <span class="reviewer-meta"><strong>Emir Zenbil</strong><small>Google'da doğrulandı</small></span>
+              </figcaption>
+            </figure>
+            <figure class="quote-card">
+              <span class="quote-mark" aria-hidden="true">“</span>
+              <blockquote>Düzce'nin en güvenilir ve samimi merkezi. İşlem kalitesi, cilt bakımı ürünleri, zayıflama cihazları ve lazer işlemi yaptırdım, çok memnun kaldım.</blockquote>
+              <figcaption>
+                <span class="avatar">Z</span>
+                <span class="reviewer-meta"><strong>Zeynep Zenbil</strong><small>Google'da doğrulandı</small></span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="quote-nav">
+            <button type="button" id="quote-prev" aria-label="Önceki yorum">←</button>
+            <button type="button" id="quote-next" aria-label="Sonraki yorum">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT -->
+  <section id="randevu" class="section section-dark">
+    <span class="section-numeral section-numeral-light">05</span>
+    <div class="section-inner">
+      <div class="appointment-grid">
+        <div class="appointment-info" data-reveal>
+          <p class="eyebrow">İndeks — Randevu</p>
+          <h2 class="section-title" data-split>Yerinizi ayırtın</h2>
+          <p class="section-desc">Formu doldurun, WhatsApp'a hazır mesajla yönlendirilin — en kısa sürede size dönüş yapalım.</p>
+          <div class="appointment-direct">
+            <a href="tel:+905347049081" class="direct-link" data-magnetic>
+              <svg viewBox="0 0 24 24" class="icon"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              0534 704 90 81
+            </a>
+            <span class="direct-note">Açık · Kapanış saati 20:30</span>
+          </div>
+        </div>
+
+        <form id="appointment-form" class="form" data-reveal>
+          <div class="form-grid">
+            <div class="field">
+              <label for="date">Tarih</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+            <div class="field">
+              <label for="service">Hizmet</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Seçiniz</option>
+                <option>Lazer Epilasyon</option>
+                <option>Cilt Bakımı</option>
+                <option>Zayıflama Cihazları</option>
+                <option>Kaş &amp; Dudak Renklendirme</option>
+                <option>Protez Tırnak &amp; Manikür</option>
+                <option>Kaş Alımı &amp; Şekillendirme</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="time">Saat</label>
+              <input type="time" id="time" name="time" required />
+            </div>
+            <div class="field">
+              <label for="name">Ad Soyad</label>
+              <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required />
+            </div>
+            <div class="field full">
+              <label for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" placeholder="05XX XXX XX XX" required />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-gold btn-block" data-magnetic>
+            <span>WhatsApp ile Gönder</span>
+            <svg viewBox="0 0 24 24" class="icon"><path d="M7 7h10v10M7 17 17 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form-success" id="form-success" role="status">Teşekkürler! WhatsApp'a yönlendiriliyorsunuz — mesajı gönderdiğinizde en kısa sürede size dönüş yapacağız.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="sss" class="section">
+    <span class="section-numeral">06</span>
+    <div class="section-inner narrow">
+      <div class="section-head center">
+        <p class="eyebrow" data-reveal>İndeks — Sıkça Sorulanlar</p>
+        <h2 class="section-title" data-split>Aklınıza takılanlar</h2>
+      </div>
+      <div class="faq-list" data-reveal>
+        <details class="faq-item" open>
+          <summary>Randevu nasıl alabilirim?</summary>
+          <p>Bu sayfadaki "Randevu Al" formunu doldurup WhatsApp üzerinden gönderebilir, ya da doğrudan 0534 704 90 81 numaralı telefonu arayabilirsiniz.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Hangi hizmetleri sunuyorsunuz?</summary>
+          <p>Lazer epilasyon, cilt bakımı, kaş &amp; dudak renklendirme, protez tırnak &amp; manikür, zayıflama cihazları ve kaş alımı &amp; şekillendirme hizmetleri sunuyoruz. Detaylar için Hizmetler bölümüne göz atabilirsiniz.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Salonunuz tam olarak nerede?</summary>
+          <p>Aziziye, İstanbul Cd. No:151 C, 81010 Düzce adresindeyiz. Atölye bölümündeki haritadan yol tarifi alabilirsiniz.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Hijyen konusunda neler yapıyorsunuz?</summary>
+          <p>Danışanlarımız Google yorumlarında salonumuzu sıklıkla "temiz ve hijyenik" olarak tanımlıyor; bu bizim için önceliklerimizin başında geliyor.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Randevumu değiştirmem veya iptal etmem gerekirse ne yapmalıyım?</summary>
+          <p>Lütfen mümkün olan en kısa sürede 0534 704 90 81 numaralı telefondan bize ulaşın, size en uygun yeni saati birlikte planlayalım.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="mobile-cta-bar">
+  <a href="tel:+905347049081" class="mcta-call">Ara</a>
+  <a href="https://wa.me/905347049081" target="_blank" rel="noreferrer" class="mcta-wa">WhatsApp</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p class="footer-logo">Feyza D. <span>Beauty</span></p>
+      <p class="footer-tagline">Düzce'de güzelliğin adresi</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=D%C3%BCzce%20Feyza%20D.%20Beauty%2C%20Aziziye%2C%20%C4%B0stanbul%20Cd.%20No%3A151%20C%2C%2081010%20D%C3%BCzce" target="_blank" rel="noreferrer">Konum</a>
+      <a href="tel:+905347049081">0534 704 90 81</a>
+      <a href="https://www.google.com/maps/place/D%C3%BCzce+Feyza+D.+Beauty/@40.8403837,31.1391689,53m/data=!3m1!1e3!4m6!3m5!1s0x409d9fd4e00702ed:0x2aed1abb42dc3071!8m2!3d40.840294!4d31.1390048!16s%2Fg%2F11vsyrw37l!5m1!1e1?entry=ttu" target="_blank" rel="noreferrer">Google'da 4,7 · 53 yorum</a>
+      <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+    </div>
+    <button class="back-to-top" id="back-to-top" data-magnetic aria-label="Başa dön">↑</button>
+  </div>
+  <p class="footer-copy">© 2026 Düzce Feyza D. Beauty. Tüm hakları saklıdır.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

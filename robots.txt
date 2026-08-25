@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://duzcefeyzadbeauty.com/sitemap.xml
