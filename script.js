@@ -139,6 +139,61 @@ if (hasGSAP) {
   });
 }
 
+// ---------- Service category tabs ----------
+const tabBtns = document.querySelectorAll('.tab-btn');
+const serviceList = document.getElementById('service-list');
+if (tabBtns.length && serviceList) {
+  tabBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (btn.classList.contains('is-active')) return;
+      const cat = btn.dataset.cat;
+      const rows = [...serviceList.querySelectorAll('.service-row')];
+      const showRows = rows.filter((r) => r.dataset.cat === cat);
+      const hideRows = rows.filter((r) => r.dataset.cat !== cat && r.style.display !== 'none');
+
+      tabBtns.forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      if (hasGSAP) {
+        gsap.to(hideRows, {
+          opacity: 0, y: -8, duration: 0.25, ease: 'power2.in', stagger: 0.03,
+          onComplete: () => {
+            hideRows.forEach((r) => { r.style.display = 'none'; });
+            showRows.forEach((r) => { r.style.display = 'flex'; });
+            gsap.fromTo(showRows, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out', stagger: 0.05 });
+          },
+        });
+      } else {
+        rows.forEach((r) => { r.style.display = r.dataset.cat === cat ? 'flex' : 'none'; });
+      }
+    });
+  });
+}
+
+// ---------- Gallery filmstrip focus transition ----------
+const galleryCards = document.querySelectorAll('.gallery-card');
+if (galleryCards.length && !prefersReducedMotion) {
+  galleryCards.forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+      galleryCards.forEach((c) => {
+        if (c === card) {
+          if (hasGSAP) gsap.to(c, { scale: 1.06, zIndex: 2, duration: 0.5, ease: 'power3.out' });
+          else c.style.transform = 'scale(1.06)';
+        } else {
+          if (hasGSAP) gsap.to(c, { scale: 0.94, opacity: 0.55, zIndex: 1, duration: 0.5, ease: 'power3.out' });
+          else { c.style.transform = 'scale(0.94)'; c.style.opacity = '0.55'; }
+        }
+      });
+    });
+    card.addEventListener('mouseleave', () => {
+      galleryCards.forEach((c) => {
+        if (hasGSAP) gsap.to(c, { scale: 1, opacity: 1, zIndex: 1, duration: 0.5, ease: 'power3.out' });
+        else { c.style.transform = 'scale(1)'; c.style.opacity = '1'; }
+      });
+    });
+  });
+}
+
 // ---------- Service row cursor glow position (optional richness) ----------
 document.querySelectorAll('.service-row').forEach((row) => {
   row.addEventListener('mousemove', (e) => {

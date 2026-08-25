@@ -185,6 +185,7 @@ body.has-cursor .cursor-dot, body.has-cursor .cursor-ring { opacity: 1; }
 @media (min-width: 640px) { .hero-float { display: block; } }
 .float-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin: 0; }
 .float-name { font-size: 1rem; margin: 0.3rem 0 0; }
+.float-role { font-family: 'Manrope', sans-serif; font-size: 0.72rem; color: rgba(255,255,255,0.65); margin: 0.2rem 0 0; }
 
 /* Marquee */
 .marquee { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--ink); padding: 0.9rem 0; }
@@ -215,6 +216,16 @@ body.has-cursor .cursor-dot, body.has-cursor .cursor-ring { opacity: 1; }
 .section-note { color: var(--muted-foreground); font-size: 0.88rem; line-height: 1.6; max-width: 20rem; }
 .section-desc { color: var(--muted-foreground); font-size: 0.95rem; line-height: 1.65; max-width: 26rem; margin-top: 1rem; }
 .section-dark .section-desc { color: rgba(255,255,255,0.65); }
+
+/* Service tabs */
+.service-tabs { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem; }
+.tab-btn {
+  border: 1px solid var(--border); background: transparent; color: var(--muted-foreground);
+  border-radius: 999px; padding: 0.55rem 1.1rem; font-size: 0.8rem; font-weight: 500;
+  cursor: pointer; transition: all 0.25s ease;
+}
+.tab-btn:hover { border-color: var(--gold); color: var(--gold); }
+.tab-btn.is-active { background: var(--ink); border-color: var(--ink); color: #fff; }
 
 /* Service list */
 .service-list { border-top: 1px solid var(--border); }

@@ -119,8 +119,9 @@
           <p class="hero-rating-sub"><span class="count-up" data-target="53">0</span> Google yorumu</p>
         </div>
         <div class="hero-float" data-reveal>
-          <p class="float-label">Uzman Ekip</p>
-          <p class="float-name">Melda &amp; Aleyna Hanım</p>
+          <p class="float-label">İşletme Sahibi</p>
+          <p class="float-name">Feyza Durmazoğlu</p>
+          <p class="float-role">Güzellik Koçu</p>
         </div>
       </div>
     </div>
@@ -133,7 +134,7 @@
     </div>
   </section>
 
-  <!-- SERVICES — editorial index list -->
+  <!-- SERVICES — categorized editorial index list -->
   <section id="hizmetler" class="section">
     <span class="section-numeral">01</span>
     <div class="section-inner">
@@ -142,47 +143,131 @@
         <h2 class="section-title" data-split>Uzman ellerde bakım</h2>
       </div>
 
-      <div class="service-list">
-        <div class="service-row" data-reveal-stagger>
+      <div class="service-tabs" data-reveal role="tablist">
+        <button class="tab-btn is-active" data-cat="lazer" type="button">Lazer</button>
+        <button class="tab-btn" data-cat="zayiflama" type="button">Zayıflama Cihazları</button>
+        <button class="tab-btn" data-cat="cilt" type="button">Cilt Bakımı</button>
+        <button class="tab-btn" data-cat="makyaj" type="button">Kalıcı Makyaj &amp; Göz</button>
+        <button class="tab-btn" data-cat="sac" type="button">Saç Bakımı</button>
+        <button class="tab-btn" data-cat="tirnak" type="button">Tırnak</button>
+      </div>
+
+      <div class="service-list" id="service-list" data-reveal>
+        <div class="service-row" data-cat="lazer">
           <span class="service-index">01</span>
-          <div class="service-main"><h3>Lazer Epilasyon</h3><p>Konforlu ve etkili tüy azaltma, tüm cilt tiplerine uygun seans planı.</p></div>
-          <span class="service-thumb"><img src="images/laser-device.webp" alt="" loading="lazy" /></span>
-          <span class="service-meta">30–60 dk</span>
+          <div class="service-main"><h3>Lazer Epilasyon</h3><p>Modern cihazlarla kalıcı ve konforlu tüy azaltma.</p></div>
+          <span class="service-thumb"><img src="images/lazer-room-real.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Salonumuzdan</span>
           <span class="service-arrow">→</span>
         </div>
-        <div class="service-row" data-reveal-stagger>
-          <span class="service-index">02</span>
-          <div class="service-main"><h3>Cilt Bakımı</h3><p>Derinlemesine temizlik ve bakım ürünleriyle canlanan, dinlenmiş bir cilt.</p></div>
-          <span class="service-thumb"><img src="images/skincare-facial.webp" alt="" loading="lazy" /></span>
-          <span class="service-meta">60–90 dk</span>
-          <span class="service-arrow">→</span>
-        </div>
-        <div class="service-row" data-reveal-stagger>
-          <span class="service-index">03</span>
-          <div class="service-main"><h3>Zayıflama Cihazları</h3><p>Bölgesel sıkılaştırma ve incelme için cihaz destekli seanslar.</p></div>
+
+        <div class="service-row" data-cat="zayiflama" style="display:none">
+          <span class="service-index">01</span>
+          <div class="service-main"><h3>Thin Slim Bölgesel İncelme</h3><p>Bölgesel yağlanma ve inceltme cihazı.</p></div>
           <span class="service-thumb"><img src="images/salon-interior.webp" alt="" loading="lazy" /></span>
-          <span class="service-meta">45 dk</span>
+          <span class="service-meta">Cihaz</span>
           <span class="service-arrow">→</span>
         </div>
-        <div class="service-row" data-reveal-stagger>
+        <div class="service-row" data-cat="zayiflama" style="display:none">
+          <span class="service-index">02</span>
+          <div class="service-main"><h3>Vacu Activ</h3><p>Vakumlu yürüme ve koşu bandı ile bölgesel incelme.</p></div>
+          <span class="service-thumb"><img src="images/salon-interior.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Cihaz</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="zayiflama" style="display:none">
+          <span class="service-index">03</span>
+          <div class="service-main"><h3>Rollshape</h3><p>Ozon terapisi, kolajen ve kromaterapi destekli bölgesel incelme.</p></div>
+          <span class="service-thumb"><img src="images/salon-interior.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Cihaz</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="zayiflama" style="display:none">
           <span class="service-index">04</span>
-          <div class="service-main"><h3>Kaş &amp; Dudak Renklendirme</h3><p>Melda Hanım'ın elinden doğal, uzun ömürlü kaş ve dudak renklendirme.</p></div>
-          <span class="service-thumb"><img src="images/brow-lip-tint-1.webp" alt="" loading="lazy" /></span>
-          <span class="service-meta">Melda Hanım</span>
+          <div class="service-main"><h3>EMFIT</h3><p>Doğum sonrası kas sıkılaştırma ve karın bölgesi toparlama.</p></div>
+          <span class="service-thumb"><img src="images/salon-interior.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Cihaz</span>
           <span class="service-arrow">→</span>
         </div>
-        <div class="service-row" data-reveal-stagger>
+        <div class="service-row" data-cat="zayiflama" style="display:none">
           <span class="service-index">05</span>
-          <div class="service-main"><h3>Protez Tırnak &amp; Manikür</h3><p>Aleyna Hanım'ın özenli işçiliğiyle uzun ömürlü, temiz protez tırnak.</p></div>
-          <span class="service-thumb"><img src="images/nail-detail.webp" alt="" loading="lazy" /></span>
-          <span class="service-meta">Aleyna Hanım</span>
+          <div class="service-main"><h3>İnfrashape</h3><p>Yatay bisiklet teknolojisiyle vücut şekillendirme.</p></div>
+          <span class="service-thumb"><img src="images/salon-interior.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Cihaz</span>
           <span class="service-arrow">→</span>
         </div>
-        <div class="service-row" data-reveal-stagger>
-          <span class="service-index">06</span>
-          <div class="service-main"><h3>Kaş Alımı &amp; Şekillendirme</h3><p>Yüz hatlarınıza uygun, doğal duruşlu kaş şekillendirme.</p></div>
-          <span class="service-thumb"><img src="images/nail-detail.webp" alt="" loading="lazy" /></span>
-          <span class="service-meta">15–30 dk</span>
+
+        <div class="service-row" data-cat="cilt" style="display:none">
+          <span class="service-index">01</span>
+          <div class="service-main"><h3>Hydrafacial Cilt Bakımı</h3><p>Derinlemesine temizlik ve nemlendirme ile canlanan cilt.</p></div>
+          <span class="service-thumb"><img src="images/skincare-facial.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Cilt Bakımı</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="cilt" style="display:none">
+          <span class="service-index">02</span>
+          <div class="service-main"><h3>Wish Pro</h3><p>Cilt sıkılaştırma ve gençleştirme.</p></div>
+          <span class="service-thumb"><img src="images/skincare-facial.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Cilt Bakımı</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="cilt" style="display:none">
+          <span class="service-index">03</span>
+          <div class="service-main"><h3>Çatlak Tedavisi</h3><p>Gerdirme izleri ve çatlaklar için özel bakım.</p></div>
+          <span class="service-thumb"><img src="images/salon-interior.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Cilt Bakımı</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="cilt" style="display:none">
+          <span class="service-index">04</span>
+          <div class="service-main"><h3>Bölgesel Beyazlatma</h3><p>Hassas bölgelerde ton eşitleme.</p></div>
+          <span class="service-thumb"><img src="images/skincare-facial.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Cilt Bakımı</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="cilt" style="display:none">
+          <span class="service-index">05</span>
+          <div class="service-main"><h3>Revcell Örümcek Ağı</h3><p>İplik teknolojisiyle cilt sıkılaştırma ve yenileme.</p></div>
+          <span class="service-thumb"><img src="images/salon-interior.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Cilt Bakımı</span>
+          <span class="service-arrow">→</span>
+        </div>
+
+        <div class="service-row" data-cat="makyaj" style="display:none">
+          <span class="service-index">01</span>
+          <div class="service-main"><h3>Microblading &amp; İpek Kirpik</h3><p>Doğal görünümlü kaş tasarımı ve kirpik uygulaması.</p></div>
+          <span class="service-thumb"><img src="images/brow-lip-tint-1.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Kalıcı Makyaj</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="makyaj" style="display:none">
+          <span class="service-index">02</span>
+          <div class="service-main"><h3>Dipliner</h3><p>Kalıcı eyeliner uygulaması.</p></div>
+          <span class="service-thumb"><img src="images/brow-lip-tint-1.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Kalıcı Makyaj</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="makyaj" style="display:none">
+          <span class="service-index">03</span>
+          <div class="service-main"><h3>Kirpik Lifting</h3><p>Kendi kirpiklerinize doğal kıvrım ve hacim.</p></div>
+          <span class="service-thumb"><img src="images/lifting-lash-real.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Kalıcı Makyaj</span>
+          <span class="service-arrow">→</span>
+        </div>
+
+        <div class="service-row" data-cat="sac" style="display:none">
+          <span class="service-index">01</span>
+          <div class="service-main"><h3>Saç Mezoterapisi</h3><p>Saç köklerini güçlendiren canlandırıcı bakım.</p></div>
+          <span class="service-thumb"><img src="images/salon-interior.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Saç Bakımı</span>
+          <span class="service-arrow">→</span>
+        </div>
+
+        <div class="service-row" data-cat="tirnak" style="display:none">
+          <span class="service-index">01</span>
+          <div class="service-main"><h3>Nail Art &amp; Protez Tırnak</h3><p>Aleyna Hanım'ın elinden özel tasarım tırnak sanatı.</p></div>
+          <span class="service-thumb"><img src="images/nail-art-real.webp" alt="" loading="lazy" /></span>
+          <span class="service-meta">Aleyna Hanım</span>
           <span class="service-arrow">→</span>
         </div>
       </div>
