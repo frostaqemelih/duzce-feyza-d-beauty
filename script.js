@@ -42,7 +42,7 @@ if (isFinePointer && !prefersReducedMotion) {
     requestAnimationFrame(loop);
   }
   loop();
-  document.querySelectorAll('a, button, .service-row, .mosaic-tile, [data-magnetic]').forEach((el) => {
+  document.querySelectorAll('a, button, .service-card, .gallery-card, [data-magnetic]').forEach((el) => {
     el.addEventListener('mouseenter', () => ring.classList.add('is-hover'));
     el.addEventListener('mouseleave', () => ring.classList.remove('is-hover'));
   });
@@ -163,7 +163,7 @@ if (tabBtns.length && serviceList) {
     btn.addEventListener('click', () => {
       if (btn.classList.contains('is-active')) return;
       const cat = btn.dataset.cat;
-      const rows = [...serviceList.querySelectorAll('.service-row')];
+      const rows = [...serviceList.querySelectorAll('.service-card')];
       const showRows = rows.filter((r) => r.dataset.cat === cat);
       const hideRows = rows.filter((r) => r.dataset.cat !== cat && r.style.display !== 'none');
 
@@ -175,12 +175,12 @@ if (tabBtns.length && serviceList) {
           opacity: 0, y: -8, duration: 0.25, ease: 'power2.in', stagger: 0.03,
           onComplete: () => {
             hideRows.forEach((r) => { r.style.display = 'none'; });
-            showRows.forEach((r) => { r.style.display = 'flex'; });
+            showRows.forEach((r) => { r.style.display = 'block'; });
             gsap.fromTo(showRows, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out', stagger: 0.05 });
           },
         });
       } else {
-        rows.forEach((r) => { r.style.display = r.dataset.cat === cat ? 'flex' : 'none'; });
+        rows.forEach((r) => { r.style.display = r.dataset.cat === cat ? 'block' : 'none'; });
       }
     });
   });
@@ -227,13 +227,13 @@ function closeLightbox() {
   lightbox.classList.remove('is-open');
   document.body.style.overflow = '';
 }
-galleryCards.forEach((card) => {
-  card.style.cursor = 'zoom-in';
+const lightboxTargets = [...galleryCards, ...document.querySelectorAll('.service-card')];
+lightboxTargets.forEach((card) => {
   card.setAttribute('role', 'button');
   card.setAttribute('tabindex', '0');
   const openThis = () => {
     const img = card.querySelector('img');
-    const cap = card.querySelector('figcaption');
+    const cap = card.querySelector('figcaption h3') || card.querySelector('figcaption');
     if (img) openLightbox(img.currentSrc || img.src, cap ? cap.textContent : '');
   };
   card.addEventListener('click', openThis);
@@ -245,14 +245,6 @@ if (lightbox) {
   });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 }
-
-// ---------- Service row cursor glow position (optional richness) ----------
-document.querySelectorAll('.service-row').forEach((row) => {
-  row.addEventListener('mousemove', (e) => {
-    const r = row.getBoundingClientRect();
-    row.style.setProperty('--mx', `${e.clientX - r.left}px`);
-  });
-});
 
 // ---------- Horizontal rail prev/next (reviews + gallery) ----------
 function wireRailNav(railId, prevId, nextId, cardSelector) {
