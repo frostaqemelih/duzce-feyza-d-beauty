@@ -139,6 +139,22 @@ if (hasGSAP) {
   });
 }
 
+// ---------- Reveal safety net ----------
+// If a CDN is slow/blocked or a ScrollTrigger check never fires for some
+// element, content must never stay permanently invisible. Force-reveal
+// anything still hidden a few seconds after load, no matter what.
+function forceRevealAll() {
+  document.querySelectorAll('[data-reveal]:not(.in-view), [data-reveal-stagger]:not(.in-view), [data-split]:not(.in-view)')
+    .forEach((el) => el.classList.add('in-view'));
+  document.querySelectorAll('.count-up').forEach((el) => {
+    if (el.textContent === '0' || el.textContent === '0.0') {
+      el.textContent = parseFloat(el.dataset.target || '0').toFixed(parseInt(el.dataset.decimals || '0', 10));
+    }
+  });
+}
+setTimeout(forceRevealAll, 3500);
+window.addEventListener('load', () => setTimeout(forceRevealAll, 3500));
+
 // ---------- Service category tabs ----------
 const tabBtns = document.querySelectorAll('.tab-btn');
 const serviceList = document.getElementById('service-list');
@@ -170,9 +186,9 @@ if (tabBtns.length && serviceList) {
   });
 }
 
-// ---------- Gallery filmstrip focus transition ----------
+// ---------- Gallery filmstrip focus transition (desktop hover) ----------
 const galleryCards = document.querySelectorAll('.gallery-card');
-if (galleryCards.length && !prefersReducedMotion) {
+if (galleryCards.length && isFinePointer && !prefersReducedMotion) {
   galleryCards.forEach((card) => {
     card.addEventListener('mouseenter', () => {
       galleryCards.forEach((c) => {
@@ -192,6 +208,42 @@ if (galleryCards.length && !prefersReducedMotion) {
       });
     });
   });
+}
+
+// ---------- Gallery lightbox (click/tap to open full size, any device) ----------
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox ? lightbox.querySelector('img') : null;
+const lightboxCaption = lightbox ? lightbox.querySelector('.lightbox-caption') : null;
+
+function openLightbox(src, caption) {
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  if (lightboxCaption) lightboxCaption.textContent = caption || '';
+  lightbox.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+galleryCards.forEach((card) => {
+  card.style.cursor = 'zoom-in';
+  card.setAttribute('role', 'button');
+  card.setAttribute('tabindex', '0');
+  const openThis = () => {
+    const img = card.querySelector('img');
+    const cap = card.querySelector('figcaption');
+    if (img) openLightbox(img.currentSrc || img.src, cap ? cap.textContent : '');
+  };
+  card.addEventListener('click', openThis);
+  card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openThis(); } });
+});
+if (lightbox) {
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.closest('.lightbox-close')) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 }
 
 // ---------- Service row cursor glow position (optional richness) ----------
