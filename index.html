@@ -22,7 +22,8 @@
 <!-- NOT: İşletme kendi alan adını (ör. duzcefeyzadbeauty.com) bağladığında yukarıdaki ve aşağıdaki URL'ler o adrese güncellenmeli. -->
 <!-- TODO: Google Search Console doğrulama etiketini buraya ekleyin, örn: <meta name="google-site-verification" content="..." /> -->
 <link rel="canonical" href="https://frostaqemelih.github.io/duzce-feyza-d-beauty/" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💛</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23110c08%22/><text x=%2250%22 y=%2264%22 font-family=%22Georgia,serif%22 font-style=%22italic%22 font-weight=%22600%22 font-size=%2244%22 fill=%22%23c79d59%22 text-anchor=%22middle%22>FD</text></svg>" />
+<script src="theme-init.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -59,7 +60,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=9" />
+<link rel="stylesheet" href="styles.css?v=10" />
 </head>
 <body>
 
@@ -113,7 +114,7 @@
         <a href="#hizmetler" class="btn btn-line" data-magnetic><span>Hizmetleri Gör</span></a>
       </div>
       <div class="hero-trust" data-reveal>
-        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span class="stars" style="--rating:4.7" aria-hidden="true"><span class="stars-bg">★★★★★</span><span class="stars-fg">★★★★★</span></span>
         <p class="trust-text"><strong><span class="count-up" data-target="4.7" data-decimals="1">0</span> / 5</strong><span class="count-up" data-target="53">0</span> Google yorumu · Düzce</p>
       </div>
     </div>
@@ -359,7 +360,7 @@
         <div class="stat-block" data-reveal>
           <p class="eyebrow">İndeks — Danışanlarımız</p>
           <p class="stat-huge"><span class="count-up" data-target="4.7" data-decimals="1">0</span></p>
-          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span class="stars" style="--rating:4.7" aria-hidden="true"><span class="stars-bg">★★★★★</span><span class="stars-fg">★★★★★</span></span>
           <p class="stat-label"><span class="count-up" data-target="53">0</span> Google yorumu · ortalama puan</p>
           <a href="https://www.google.com/maps/place/D%C3%BCzce+Feyza+D.+Beauty/@40.8403837,31.1391689,53m/data=!3m1!1e3!4m6!3m5!1s0x409d9fd4e00702ed:0x2aed1abb42dc3071!8m2!3d40.840294!4d31.1390048!16s%2Fg%2F11vsyrw37l!5m1!1e1?entry=ttu" target="_blank" rel="noopener noreferrer" class="stat-link">Tüm yorumları gör →</a>
         </div>
@@ -506,20 +507,40 @@
 
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-brand">
+    <div class="footer-col footer-brand">
       <p class="footer-logo">Feyza D. <span>Beauty</span></p>
       <p class="footer-tagline">Düzce'de güzelliğin adresi</p>
+      <div class="footer-rating">
+        <span class="stars" style="--rating:4.7" aria-hidden="true"><span class="stars-bg">★★★★★</span><span class="stars-fg">★★★★★</span></span>
+        <span>4,7 · 53 Google yorumu</span>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="https://www.google.com/maps/dir/?api=1&destination=D%C3%BCzce%20Feyza%20D.%20Beauty%2C%20Aziziye%2C%20%C4%B0stanbul%20Cd.%20No%3A151%20C%2C%2081010%20D%C3%BCzce" target="_blank" rel="noopener noreferrer">Konum</a>
+    <div class="footer-col">
+      <h5>Hızlı Linkler</h5>
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#yorumlar">Yorumlar</a>
+      <a href="#randevu">Randevu</a>
+    </div>
+    <div class="footer-col">
+      <h5>İletişim</h5>
       <a href="tel:+905347049081">0534 704 90 81</a>
-      <a href="https://www.google.com/maps/place/D%C3%BCzce+Feyza+D.+Beauty/@40.8403837,31.1391689,53m/data=!3m1!1e3!4m6!3m5!1s0x409d9fd4e00702ed:0x2aed1abb42dc3071!8m2!3d40.840294!4d31.1390048!16s%2Fg%2F11vsyrw37l!5m1!1e1?entry=ttu" target="_blank" rel="noopener noreferrer">Google'da 4,7 · 53 yorum</a>
-      <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+      <a href="https://www.google.com/maps/place/D%C3%BCzce+Feyza+D.+Beauty/@40.8403837,31.1391689,53m/data=!3m1!1e3!4m6!3m5!1s0x409d9fd4e00702ed:0x2aed1abb42dc3071!8m2!3d40.840294!4d31.1390048!16s%2Fg%2F11vsyrw37l!5m1!1e1?entry=ttu" target="_blank" rel="noopener noreferrer">Aziziye, İstanbul Cd. No:151 C, Düzce</a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=D%C3%BCzce%20Feyza%20D.%20Beauty%2C%20Aziziye%2C%20%C4%B0stanbul%20Cd.%20No%3A151%20C%2C%2081010%20D%C3%BCzce" target="_blank" rel="noopener noreferrer">Yol Tarifi Al →</a>
     </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Düzce Feyza D. Beauty. Tüm hakları saklıdır.</p>
+    <a href="gizlilik-politikasi.html" class="footer-legal">Gizlilik Politikası</a>
     <button class="back-to-top" id="back-to-top" data-magnetic aria-label="Başa dön">↑</button>
   </div>
-  <p class="footer-copy">© 2026 Düzce Feyza D. Beauty. Tüm hakları saklıdır.</p>
 </footer>
+
+<div class="theme-switcher" id="theme-switcher" role="group" aria-label="Tema seç">
+  <button type="button" class="theme-dot" data-theme-choice="gold" aria-label="Altın Zarafet" title="Altın Zarafet"></button>
+  <button type="button" class="theme-dot" data-theme-choice="powder" aria-label="Pudra Pembe" title="Pudra Pembe"></button>
+  <button type="button" class="theme-dot" data-theme-choice="dark-lux" aria-label="Karanlık Lüks" title="Karanlık Lüks"></button>
+</div>
 
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" type="button" aria-label="Kapat">✕</button>
@@ -531,6 +552,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="script.js?v=9"></script>
+<script src="script.js?v=10"></script>
 </body>
 </html>

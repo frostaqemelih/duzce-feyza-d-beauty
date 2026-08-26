@@ -14,6 +14,25 @@ if (loader) {
   setTimeout(hideLoader, 2500); // safety net
 }
 
+// ---------- Theme switcher ----------
+const themeSwitcher = document.getElementById('theme-switcher');
+if (themeSwitcher) {
+  const dots = themeSwitcher.querySelectorAll('[data-theme-choice]');
+  const applyActive = () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'gold';
+    dots.forEach((d) => d.classList.toggle('is-active', d.dataset.themeChoice === current));
+  };
+  applyActive();
+  dots.forEach((d) => {
+    d.addEventListener('click', () => {
+      const choice = d.dataset.themeChoice;
+      document.documentElement.setAttribute('data-theme', choice);
+      try { localStorage.setItem('fdb-theme', choice); } catch (e) {}
+      applyActive();
+    });
+  });
+}
+
 // ---------- Header + scroll progress ----------
 const header = document.getElementById('site-header');
 const progressBar = document.getElementById('scroll-progress');
@@ -270,9 +289,43 @@ function wireRailNav(railId, prevId, nextId, cardSelector) {
 wireRailNav('quote-rail', 'quote-prev', 'quote-next', '.quote-card');
 wireRailNav('gallery-rail', 'gallery-prev', 'gallery-next', '.gallery-card');
 
+// ---------- FAQ smooth accordion (animates height instead of the native abrupt toggle) ----------
+document.querySelectorAll('.faq-item').forEach((item) => {
+  const summary = item.querySelector('summary');
+  const answer = item.querySelector('p');
+  if (!summary || !answer) return;
+  if (item.open) answer.style.maxHeight = 'none';
+  summary.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (item.open) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      requestAnimationFrame(() => { requestAnimationFrame(() => { answer.style.maxHeight = '0px'; }); });
+      answer.addEventListener('transitionend', function onEnd(ev) {
+        if (ev.propertyName !== 'max-height') return;
+        item.open = false;
+        answer.removeEventListener('transitionend', onEnd);
+      }, { once: true });
+    } else {
+      item.open = true;
+      answer.style.maxHeight = '0px';
+      requestAnimationFrame(() => { requestAnimationFrame(() => { answer.style.maxHeight = answer.scrollHeight + 'px'; }); });
+      answer.addEventListener('transitionend', function onEnd(ev) {
+        if (ev.propertyName !== 'max-height') return;
+        answer.style.maxHeight = 'none';
+        answer.removeEventListener('transitionend', onEnd);
+      }, { once: true });
+    }
+  });
+});
+
 // ---------- Back to top ----------
 const backToTop = document.getElementById('back-to-top');
-if (backToTop) backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+if (backToTop) {
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  const toggleBackToTop = () => backToTop.classList.toggle('is-visible', window.scrollY > 600);
+  window.addEventListener('scroll', toggleBackToTop, { passive: true });
+  toggleBackToTop();
+}
 
 // ---------- Appointment form ----------
 const dateInput = document.getElementById('date');
