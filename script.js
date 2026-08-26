@@ -91,10 +91,38 @@ if (hasGSAP) {
   });
 
   // Hero image gentle parallax + scale-in on load
-  gsap.fromTo('.hero-image', { scale: 1.12, clipPath: 'inset(4% round 1.2rem)' }, { scale: 1, clipPath: 'inset(0% round 1.2rem)', duration: 1.3, ease: 'power3.out', delay: 0.3 });
+  gsap.fromTo('.hero-image', { scale: 1.14, clipPath: 'inset(5%)' }, { scale: 1.02, clipPath: 'inset(0%)', duration: 1.4, ease: 'power3.out', delay: 0.3 });
   gsap.to('.hero-visual', {
     y: -40, ease: 'none',
     scrollTrigger: { trigger: '.hero-wrap', start: 'top top', end: 'bottom top', scrub: true },
+  });
+
+  // Scroll-hero: as the hero scrolls out, its copy/card recede and dim so the
+  // exit reads as one continuous camera move into the next section rather than
+  // a hard cut.
+  gsap.to(['.hero-copy', '.hero-servcard', '.hero-idx'], {
+    y: -70, opacity: 0, scale: 0.97, ease: 'none',
+    scrollTrigger: { trigger: '.hero-wrap', start: 'top top', end: 'bottom top', scrub: true },
+  });
+
+  // Tie the six numbered sections together: each section's giant background
+  // numeral drifts at a different speed than its content (a shared depth cue
+  // that reads as one continuous filmstrip instead of stacked, unrelated blocks).
+  gsap.utils.toArray('.section-numeral').forEach((el) => {
+    gsap.fromTo(el, { y: -50 }, {
+      y: 50, ease: 'none',
+      scrollTrigger: { trigger: el.closest('.section'), start: 'top bottom', end: 'bottom top', scrub: true },
+    });
+  });
+
+  // Every section eases up and in as it crosses into view, on top of its own
+  // inner data-reveal choreography — a single consistent transition grammar
+  // shared by the hero and all six numbered sections.
+  gsap.utils.toArray('.section').forEach((el) => {
+    gsap.fromTo(el, { opacity: 0.55, y: 36 }, {
+      opacity: 1, y: 0, ease: 'power2.out', duration: 1,
+      scrollTrigger: { trigger: el, start: 'top 85%', end: 'top 45%', scrub: true },
+    });
   });
 
   // Count-up numbers

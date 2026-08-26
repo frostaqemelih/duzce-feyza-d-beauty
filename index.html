@@ -59,7 +59,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=7" />
+<link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body>
 
@@ -89,48 +89,57 @@
 
 <main>
 
-  <!-- HERO — asymmetric editorial split -->
+  <!-- HERO — cinematic full-bleed with floating service menu -->
   <section id="top" class="hero-wrap">
-    <span class="hero-spine">DÜZCE — GÜZELLİK ATÖLYESİ — EST. 2026 — DÜZCE — GÜZELLİK ATÖLYESİ —</span>
+    <div class="hero-visual">
+      <img class="hero-image" src="images/hero.webp" alt="Feyza D. Beauty güzellik atölyesi atmosferi" loading="eager" />
+      <div class="hero-goldwash"></div>
+      <div class="hero-gradient"></div>
+    </div>
+    <div class="hero-frame" data-reveal></div>
 
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <p class="hero-eyebrow" data-reveal><span class="eyebrow-line"></span>Aziziye, Düzce</p>
-        <h1 class="hero-title" data-reveal>
-          <span class="ht-row">Zarafetin</span>
-          <span class="ht-row ht-italic">güzellik</span>
-          <span class="ht-row">atölyesi</span>
-        </h1>
-        <p class="hero-sub" data-reveal>Lazer epilasyon, cilt bakımı, kaş &amp; dudak renklendirme ve protez tırnak — uzman ellerde, Düzce'nin güvenilir adresinde.</p>
-        <div class="hero-actions" data-reveal>
-          <a href="#randevu" class="btn btn-primary" data-magnetic><span>Randevu Al</span> <svg viewBox="0 0 24 24" class="icon"><path d="M7 7h10v10M7 17 17 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <a href="#hizmetler" class="btn btn-line" data-magnetic><span>Hizmetler</span></a>
-        </div>
+    <div class="hero-idx" data-reveal aria-hidden="true"><span>01</span><span class="idx-line"></span><span>06</span></div>
+
+    <div class="hero-copy">
+      <p class="hero-eyebrow" data-reveal><span class="eyebrow-line"></span>Aziziye, Düzce</p>
+      <h1 class="hero-title" data-reveal>
+        <span class="ht-row">Zarafetin</span>
+        <span class="ht-row"><em class="ht-italic">güzellik</em> atölyesi</span>
+      </h1>
+      <p class="hero-sub" data-reveal>Lazer epilasyon, cilt bakımı, kaş &amp; dudak renklendirme ve protez tırnak — uzman ellerde, güvenilir sonuçlar.</p>
+      <p class="hero-owner" data-reveal>İşletme Sahibi <strong>Feyza Durmazoğlu</strong> — Güzellik Koçu</p>
+      <div class="hero-actions" data-reveal>
+        <a href="#randevu" class="btn btn-primary" data-magnetic><span>Randevu Al</span> <svg viewBox="0 0 24 24" class="icon"><path d="M7 7h10v10M7 17 17 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="#hizmetler" class="btn btn-line" data-magnetic><span>Hizmetleri Gör</span></a>
       </div>
-
-      <div class="hero-visual">
-        <div class="hero-frame"></div>
-        <div class="hero-image" role="img" aria-label="Feyza D. Beauty güzellik atölyesi atmosferi" style="background-image:url(images/hero.webp)"></div>
-        <div class="hero-rating" data-reveal>
-          <span class="stars" aria-hidden="true">★★★★★</span>
-          <p><span class="count-up" data-target="4.7" data-decimals="1">0</span> <small>/ 5</small></p>
-          <p class="hero-rating-sub"><span class="count-up" data-target="53">0</span> Google yorumu</p>
-        </div>
-        <div class="hero-float" data-reveal>
-          <p class="float-label">İşletme Sahibi</p>
-          <p class="float-name">Feyza Durmazoğlu</p>
-          <p class="float-role">Güzellik Koçu</p>
-        </div>
+      <div class="hero-trust" data-reveal>
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p class="trust-text"><strong><span class="count-up" data-target="4.7" data-decimals="1">0</span> / 5</strong><span class="count-up" data-target="53">0</span> Google yorumu · Düzce</p>
       </div>
     </div>
 
-    <div class="marquee">
-      <div class="marquee-track">
-        <span>Lazer Epilasyon</span><i>✦</i><span>Cilt Bakımı</span><i>✦</i><span>Kaş &amp; Dudak Renklendirme</span><i>✦</i><span>Protez Tırnak</span><i>✦</i><span>Zayıflama Cihazları</span><i>✦</i><span>Kaş Alımı</span><i>✦</i>
-        <span>Lazer Epilasyon</span><i>✦</i><span>Cilt Bakımı</span><i>✦</i><span>Kaş &amp; Dudak Renklendirme</span><i>✦</i><span>Protez Tırnak</span><i>✦</i><span>Zayıflama Cihazları</span><i>✦</i><span>Kaş Alımı</span><i>✦</i>
-      </div>
+    <div class="hero-servcard" data-reveal>
+      <h4>Hizmetlerimiz</h4>
+      <ul>
+        <li data-reveal-stagger><span class="num">01</span><div><span class="name">Lazer Epilasyon</span><span class="meta">Kalıcı tüy azaltma</span></div></li>
+        <li data-reveal-stagger><span class="num">02</span><div><span class="name">Cilt Bakımı</span><span class="meta">Hydrafacial · Wish Pro</span></div></li>
+        <li data-reveal-stagger><span class="num">03</span><div><span class="name">Zayıflama Cihazları</span><span class="meta">5 farklı teknoloji</span></div></li>
+        <li data-reveal-stagger><span class="num">04</span><div><span class="name">Kalıcı Makyaj &amp; Göz</span><span class="meta">Microblading · Lifting</span></div></li>
+        <li data-reveal-stagger><span class="num">05</span><div><span class="name">Tırnak</span><span class="meta">Nail art · Protez</span></div></li>
+      </ul>
     </div>
+
+    <div class="hero-scrollcue" data-reveal><span class="rule"></span>Keşfedin</div>
   </section>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Lazer Epilasyon</span><i>✦</i><span>Cilt Bakımı</span><i>✦</i><span>Kaş &amp; Dudak Renklendirme</span><i>✦</i><span>Protez Tırnak</span><i>✦</i><span>Zayıflama Cihazları</span><i>✦</i><span>Kaş Alımı</span><i>✦</i>
+      <span>Lazer Epilasyon</span><i>✦</i><span>Cilt Bakımı</span><i>✦</i><span>Kaş &amp; Dudak Renklendirme</span><i>✦</i><span>Protez Tırnak</span><i>✦</i><span>Zayıflama Cihazları</span><i>✦</i><span>Kaş Alımı</span><i>✦</i>
+    </div>
+  </div>
+
+  <div class="section-transition" style="background: linear-gradient(to bottom, var(--ink), var(--background));" aria-hidden="true"></div>
 
   <!-- SERVICES — categorized editorial index list -->
   <section id="hizmetler" class="section">
@@ -262,6 +271,8 @@
     </div>
   </section>
 
+  <div class="section-transition" style="background: linear-gradient(to bottom, var(--background), var(--secondary));" aria-hidden="true"></div>
+
   <!-- GALERİ — flowing left-to-right photo filmstrip -->
   <section id="galeri" class="section section-alt">
     <span class="section-numeral">02</span>
@@ -298,6 +309,8 @@
       </div>
     </div>
   </section>
+
+  <div class="section-transition" style="background: linear-gradient(to bottom, var(--secondary), var(--background));" aria-hidden="true"></div>
 
   <!-- KONUM — standalone map -->
   <section id="konum" class="section">
@@ -388,6 +401,8 @@
     </div>
   </section>
 
+  <div class="section-transition" style="background: linear-gradient(to bottom, var(--background), var(--ink));" aria-hidden="true"></div>
+
   <!-- APPOINTMENT -->
   <section id="randevu" class="section section-dark">
     <span class="section-numeral section-numeral-light">05</span>
@@ -446,6 +461,8 @@
       </div>
     </div>
   </section>
+
+  <div class="section-transition" style="background: linear-gradient(to bottom, var(--ink), var(--background));" aria-hidden="true"></div>
 
   <!-- FAQ -->
   <section id="sss" class="section">
@@ -514,6 +531,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="script.js?v=7"></script>
+<script src="script.js?v=9"></script>
 </body>
 </html>
