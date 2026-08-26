@@ -142,7 +142,7 @@ if (tabBtns.length && serviceList) {
     btn.addEventListener('click', () => {
       if (btn.classList.contains('is-active')) return;
       const cat = btn.dataset.cat;
-      const rows = [...serviceList.querySelectorAll('.service-card')];
+      const rows = [...serviceList.querySelectorAll('.service-row')];
       const showRows = rows.filter((r) => r.dataset.cat === cat);
       const hideRows = rows.filter((r) => r.dataset.cat !== cat && r.style.display !== 'none');
 
@@ -154,12 +154,12 @@ if (tabBtns.length && serviceList) {
           opacity: 0, y: -8, duration: 0.25, ease: 'power2.in', stagger: 0.03,
           onComplete: () => {
             hideRows.forEach((r) => { r.style.display = 'none'; });
-            showRows.forEach((r) => { r.style.display = 'block'; });
+            showRows.forEach((r) => { r.style.display = 'flex'; });
             gsap.fromTo(showRows, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out', stagger: 0.05 });
           },
         });
       } else {
-        rows.forEach((r) => { r.style.display = r.dataset.cat === cat ? 'block' : 'none'; });
+        rows.forEach((r) => { r.style.display = r.dataset.cat === cat ? 'flex' : 'none'; });
       }
     });
   });
@@ -206,7 +206,7 @@ function closeLightbox() {
   lightbox.classList.remove('is-open');
   document.body.style.overflow = '';
 }
-const lightboxTargets = [...galleryCards, ...document.querySelectorAll('.service-card')];
+const lightboxTargets = [...galleryCards];
 lightboxTargets.forEach((card) => {
   card.setAttribute('role', 'button');
   card.setAttribute('tabindex', '0');

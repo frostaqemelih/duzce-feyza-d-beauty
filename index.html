@@ -57,7 +57,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=5" />
+<link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
 
@@ -148,80 +148,114 @@
         <button class="tab-btn" data-cat="tirnak" type="button">Tırnak</button>
       </div>
 
-      <div class="service-grid" id="service-list" data-reveal>
-        <figure class="service-card" data-cat="lazer">
-          <img src="images/lazer-epilasyon-real.webp" alt="Lazer Epilasyon" loading="lazy" />
-          <figcaption><h3>Lazer Epilasyon</h3><span>Salonumuzdan</span></figcaption>
-        </figure>
+      <div class="service-list" id="service-list" data-reveal>
+        <div class="service-row" data-cat="lazer">
+          <span class="service-index">01</span>
+          <div class="service-main"><h3>Lazer Epilasyon</h3><p>Modern cihazlarla kalıcı ve konforlu tüy azaltma.</p></div>
+          <span class="service-meta">Salonumuzdan</span>
+          <span class="service-arrow">→</span>
+        </div>
 
-        <figure class="service-card" data-cat="zayiflama" style="display:none">
-          <img src="images/thin-slim-real.webp" alt="Thin Slim Bölgesel İncelme cihazı" loading="lazy" />
-          <figcaption><h3>Thin Slim Bölgesel İncelme</h3><span>Cihaz</span></figcaption>
-        </figure>
-        <figure class="service-card" data-cat="zayiflama" style="display:none">
-          <img src="images/vacu-activ-real.webp" alt="Vacu Activ cihazı" loading="lazy" />
-          <figcaption><h3>Vacu Activ</h3><span>Cihaz</span></figcaption>
-        </figure>
-        <figure class="service-card" data-cat="zayiflama" style="display:none">
-          <img src="images/rollshape-real.webp" alt="Rollshape cihazı" loading="lazy" />
-          <figcaption><h3>Rollshape</h3><span>Cihaz</span></figcaption>
-        </figure>
-        <figure class="service-card" data-cat="zayiflama" style="display:none">
-          <img src="images/emfit-real.webp" alt="EMFIT cihazı" loading="lazy" />
-          <figcaption><h3>EMFIT</h3><span>Cihaz</span></figcaption>
-        </figure>
-        <figure class="service-card" data-cat="zayiflama" style="display:none">
-          <img src="images/infrashape-real.webp" alt="İnfrashape cihazı" loading="lazy" />
-          <figcaption><h3>İnfrashape</h3><span>Cihaz</span></figcaption>
-        </figure>
+        <div class="service-row" data-cat="zayiflama" style="display:none">
+          <span class="service-index">01</span>
+          <div class="service-main"><h3>Thin Slim Bölgesel İncelme</h3><p>Bölgesel yağlanma ve inceltme cihazı.</p></div>
+          <span class="service-meta">Cihaz</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="zayiflama" style="display:none">
+          <span class="service-index">02</span>
+          <div class="service-main"><h3>Vacu Activ</h3><p>Vakumlu yürüme ve koşu bandı ile bölgesel incelme.</p></div>
+          <span class="service-meta">Cihaz</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="zayiflama" style="display:none">
+          <span class="service-index">03</span>
+          <div class="service-main"><h3>Rollshape</h3><p>Ozon terapisi, kolajen ve kromaterapi destekli bölgesel incelme.</p></div>
+          <span class="service-meta">Cihaz</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="zayiflama" style="display:none">
+          <span class="service-index">04</span>
+          <div class="service-main"><h3>EMFIT</h3><p>Doğum sonrası kas sıkılaştırma ve karın bölgesi toparlama.</p></div>
+          <span class="service-meta">Cihaz</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="zayiflama" style="display:none">
+          <span class="service-index">05</span>
+          <div class="service-main"><h3>İnfrashape</h3><p>Yatay bisiklet teknolojisiyle vücut şekillendirme.</p></div>
+          <span class="service-meta">Cihaz</span>
+          <span class="service-arrow">→</span>
+        </div>
 
-        <figure class="service-card" data-cat="cilt" style="display:none">
-          <img src="images/hydrafacial-real.webp" alt="Hydrafacial cilt bakımı" loading="lazy" />
-          <figcaption><h3>Hydrafacial Cilt Bakımı</h3><span>Cilt Bakımı</span></figcaption>
-        </figure>
-        <figure class="service-card" data-cat="cilt" style="display:none">
-          <img src="images/wishpro-real.webp" alt="Wish Pro cilt sıkılaştırma" loading="lazy" />
-          <figcaption><h3>Wish Pro</h3><span>Cilt Bakımı</span></figcaption>
-        </figure>
-        <figure class="service-card" data-cat="cilt" style="display:none">
-          <img src="images/catlak-real.webp" alt="Çatlak tedavisi" loading="lazy" />
-          <figcaption><h3>Çatlak Tedavisi</h3><span>Cilt Bakımı</span></figcaption>
-        </figure>
-        <figure class="service-card" data-cat="cilt" style="display:none">
-          <img src="images/beyazlatma-real.webp" alt="Bölgesel beyazlatma" loading="lazy" />
-          <figcaption><h3>Bölgesel Beyazlatma</h3><span>Cilt Bakımı</span></figcaption>
-        </figure>
-        <figure class="service-card" data-cat="cilt" style="display:none">
-          <img src="images/revcell-real.webp" alt="Revcell örümcek ağı cilt yenileme" loading="lazy" />
-          <figcaption><h3>Revcell Örümcek Ağı</h3><span>Cilt Bakımı</span></figcaption>
-        </figure>
+        <div class="service-row" data-cat="cilt" style="display:none">
+          <span class="service-index">01</span>
+          <div class="service-main"><h3>Hydrafacial Cilt Bakımı</h3><p>Derinlemesine temizlik ve nemlendirme ile canlanan cilt.</p></div>
+          <span class="service-meta">Cilt Bakımı</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="cilt" style="display:none">
+          <span class="service-index">02</span>
+          <div class="service-main"><h3>Wish Pro</h3><p>Cilt sıkılaştırma ve gençleştirme.</p></div>
+          <span class="service-meta">Cilt Bakımı</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="cilt" style="display:none">
+          <span class="service-index">03</span>
+          <div class="service-main"><h3>Çatlak Tedavisi</h3><p>Gerdirme izleri ve çatlaklar için özel bakım.</p></div>
+          <span class="service-meta">Cilt Bakımı</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="cilt" style="display:none">
+          <span class="service-index">04</span>
+          <div class="service-main"><h3>Bölgesel Beyazlatma</h3><p>Hassas bölgelerde ton eşitleme.</p></div>
+          <span class="service-meta">Cilt Bakımı</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="cilt" style="display:none">
+          <span class="service-index">05</span>
+          <div class="service-main"><h3>Revcell Örümcek Ağı</h3><p>İplik teknolojisiyle cilt sıkılaştırma ve yenileme.</p></div>
+          <span class="service-meta">Cilt Bakımı</span>
+          <span class="service-arrow">→</span>
+        </div>
 
-        <figure class="service-card" data-cat="makyaj" style="display:none">
-          <img src="images/microblading-real.webp" alt="Microblading ve ipek kirpik uygulaması" loading="lazy" />
-          <figcaption><h3>Microblading &amp; İpek Kirpik</h3><span>Kalıcı Makyaj</span></figcaption>
-        </figure>
-        <figure class="service-card" data-cat="makyaj" style="display:none">
-          <img src="images/dipliner-real.webp" alt="Dipliner kalıcı eyeliner" loading="lazy" />
-          <figcaption><h3>Dipliner</h3><span>Kalıcı Makyaj</span></figcaption>
-        </figure>
-        <figure class="service-card" data-cat="makyaj" style="display:none">
-          <img src="images/lifting-real.webp" alt="Kirpik lifting" loading="lazy" />
-          <figcaption><h3>Kirpik Lifting</h3><span>Kalıcı Makyaj</span></figcaption>
-        </figure>
+        <div class="service-row" data-cat="makyaj" style="display:none">
+          <span class="service-index">01</span>
+          <div class="service-main"><h3>Microblading &amp; İpek Kirpik</h3><p>Doğal görünümlü kaş tasarımı ve kirpik uygulaması.</p></div>
+          <span class="service-meta">Kalıcı Makyaj</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="makyaj" style="display:none">
+          <span class="service-index">02</span>
+          <div class="service-main"><h3>Dipliner</h3><p>Kalıcı eyeliner uygulaması.</p></div>
+          <span class="service-meta">Kalıcı Makyaj</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="makyaj" style="display:none">
+          <span class="service-index">03</span>
+          <div class="service-main"><h3>Kirpik Lifting</h3><p>Kendi kirpiklerinize doğal kıvrım ve hacim.</p></div>
+          <span class="service-meta">Kalıcı Makyaj</span>
+          <span class="service-arrow">→</span>
+        </div>
 
-        <figure class="service-card" data-cat="sac" style="display:none">
-          <img src="images/sacmezo-real.webp" alt="Saç mezoterapisi" loading="lazy" />
-          <figcaption><h3>Saç Mezoterapisi</h3><span>Saç Bakımı</span></figcaption>
-        </figure>
+        <div class="service-row" data-cat="sac" style="display:none">
+          <span class="service-index">01</span>
+          <div class="service-main"><h3>Saç Mezoterapisi</h3><p>Saç köklerini güçlendiren canlandırıcı bakım.</p></div>
+          <span class="service-meta">Saç Bakımı</span>
+          <span class="service-arrow">→</span>
+        </div>
 
-        <figure class="service-card" data-cat="tirnak" style="display:none">
-          <img src="images/nail-art-real.webp" alt="Nail art çalışması" loading="lazy" />
-          <figcaption><h3>Nail Art Çalışmaları</h3><span>Aleyna Hanım</span></figcaption>
-        </figure>
-        <figure class="service-card" data-cat="tirnak" style="display:none">
-          <img src="images/protez-tirnak-real.webp" alt="Protez tırnak ve nail art çalışması" loading="lazy" />
-          <figcaption><h3>Protez Tırnak ve Nail Art</h3><span>Aleyna Hanım</span></figcaption>
-        </figure>
+        <div class="service-row" data-cat="tirnak" style="display:none">
+          <span class="service-index">01</span>
+          <div class="service-main"><h3>Nail Art Çalışmaları</h3><p>Aleyna Hanım'ın elinden özel tasarım tırnak sanatı.</p></div>
+          <span class="service-meta">Aleyna Hanım</span>
+          <span class="service-arrow">→</span>
+        </div>
+        <div class="service-row" data-cat="tirnak" style="display:none">
+          <span class="service-index">02</span>
+          <div class="service-main"><h3>Protez Tırnak ve Nail Art</h3><p>Uzun ömürlü, özenli protez tırnak uygulaması.</p></div>
+          <span class="service-meta">Aleyna Hanım</span>
+          <span class="service-arrow">→</span>
+        </div>
       </div>
     </div>
   </section>
@@ -241,11 +275,12 @@
 
     <div class="gallery-rail-wrap">
       <div class="gallery-rail" id="gallery-rail" data-reveal>
-        <figure class="gallery-card"><img src="images/salon-interior.webp" alt="Sıcak, zarif bir bakım odası atmosferi" loading="lazy" /><figcaption>Bakım Odası</figcaption></figure>
-        <figure class="gallery-card"><img src="images/laser-device.webp" alt="Lazer epilasyon cihazı, bakım odasında" loading="lazy" /><figcaption>Lazer Epilasyon</figcaption></figure>
-        <figure class="gallery-card"><img src="images/brow-lip-tint-1.webp" alt="Kaş ve dudak renklendirme uygulaması detayı" loading="lazy" /><figcaption>Kaş &amp; Dudak Renklendirme</figcaption></figure>
-        <figure class="gallery-card"><img src="images/nail-detail.webp" alt="Manikür ve protez tırnak detayı" loading="lazy" /><figcaption>Protez Tırnak</figcaption></figure>
-        <figure class="gallery-card"><img src="images/skincare-facial.webp" alt="Cilt bakımı ve yüz uygulaması detayı" loading="lazy" /><figcaption>Cilt Bakımı</figcaption></figure>
+        <figure class="gallery-card"><img src="images/lazer-epilasyon-real.webp" alt="Lazer epilasyon odamız" loading="lazy" /><figcaption>Lazer Epilasyon</figcaption></figure>
+        <figure class="gallery-card"><img src="images/nail-art-real.webp" alt="Nail art çalışması" loading="lazy" /><figcaption>Nail Art</figcaption></figure>
+        <figure class="gallery-card"><img src="images/protez-tirnak-real.webp" alt="Protez tırnak çalışması" loading="lazy" /><figcaption>Protez Tırnak</figcaption></figure>
+        <figure class="gallery-card"><img src="images/microblading-real.webp" alt="Microblading ve ipek kirpik uygulaması" loading="lazy" /><figcaption>Microblading &amp; Kirpik</figcaption></figure>
+        <figure class="gallery-card"><img src="images/hydrafacial-real.webp" alt="Hydrafacial cilt bakımı uygulaması" loading="lazy" /><figcaption>Cilt Bakımı</figcaption></figure>
+        <figure class="gallery-card"><img src="images/lifting-real.webp" alt="Kirpik lifting uygulaması" loading="lazy" /><figcaption>Kirpik Lifting</figcaption></figure>
       </div>
       <div class="section-inner">
         <div class="quote-nav gallery-nav">
@@ -471,6 +506,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="script.js?v=5"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>
