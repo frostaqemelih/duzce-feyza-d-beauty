@@ -1,6 +1,103 @@
 const isFinePointer = window.matchMedia('(pointer: fine)').matches;
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// ---------- Content loading (admin-editable data, content.json) ----------
+// The static HTML already contains the current content as a baseline, so if
+// this fetch is slow/blocked/fails, the page still shows correct data — this
+// is a progressive enhancement layer, not a hard dependency.
+function escapeHtml(s) {
+  return String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+function getPath(obj, path) {
+  return path.split('.').reduce((o, k) => (o == null ? undefined : o[k]), obj);
+}
+async function loadSiteContent() {
+  const res = await fetch('content.json', { cache: 'no-store' });
+  if (!res.ok) throw new Error('content.json not ok: ' + res.status);
+  return res.json();
+}
+function renderSiteContent(data) {
+  if (!data || typeof data !== 'object') return;
+  data.rating = data.rating || {};
+  data.rating.valueDisplay = String(data.rating.value).replace('.', ',');
+
+  document.querySelectorAll('[data-bind-text]').forEach((el) => {
+    const val = getPath(data, el.dataset.bindText);
+    if (val !== undefined) el.textContent = val;
+  });
+  document.querySelectorAll('[data-bind-attr]').forEach((el) => {
+    el.dataset.bindAttr.split(';').forEach((pair) => {
+      const [attr, path] = pair.split(':');
+      const val = getPath(data, path);
+      if (attr && val !== undefined) el.setAttribute(attr, val);
+    });
+  });
+  document.querySelectorAll('[data-bind-target]').forEach((el) => {
+    const val = getPath(data, el.dataset.bindTarget);
+    if (val !== undefined) el.dataset.target = val;
+  });
+  document.querySelectorAll('[data-bind-rating]').forEach((el) => {
+    if (data.rating && data.rating.value !== undefined) el.style.setProperty('--rating', data.rating.value);
+  });
+
+  // Services (tabs + category-filtered list)
+  const tabsEl = document.getElementById('service-tabs');
+  const listEl = document.getElementById('service-list');
+  if (tabsEl && listEl && data.services && Array.isArray(data.services.categories)) {
+    tabsEl.innerHTML = data.services.categories
+      .map((c, i) => `<button class="tab-btn${i === 0 ? ' is-active' : ''}" data-cat="${escapeHtml(c.key)}" type="button">${escapeHtml(c.label)}</button>`)
+      .join('');
+    const byCat = {};
+    (data.services.items || []).forEach((it) => { (byCat[it.cat] = byCat[it.cat] || []).push(it); });
+    let html = '';
+    data.services.categories.forEach((c, ci) => {
+      (byCat[c.key] || []).forEach((it, ii) => {
+        html += `<div class="service-row" data-cat="${escapeHtml(c.key)}"${ci === 0 ? '' : ' style="display:none"'}>
+          <span class="service-index">${String(ii + 1).padStart(2, '0')}</span>
+          <div class="service-main"><h3>${escapeHtml(it.name)}</h3><p>${escapeHtml(it.desc)}</p></div>
+          <span class="service-meta">${escapeHtml(it.meta)}</span>
+          <span class="service-arrow">→</span>
+        </div>`;
+      });
+    });
+    listEl.innerHTML = html;
+  }
+
+  // Gallery
+  const galleryEl = document.getElementById('gallery-rail');
+  if (galleryEl && Array.isArray(data.gallery)) {
+    galleryEl.innerHTML = data.gallery
+      .map((g) => `<figure class="gallery-card"><img src="${escapeHtml(g.src)}" alt="${escapeHtml(g.alt)}" loading="lazy" /><figcaption>${escapeHtml(g.caption)}</figcaption></figure>`)
+      .join('');
+  }
+
+  // Reviews
+  const quoteEl = document.getElementById('quote-rail');
+  if (quoteEl && Array.isArray(data.reviews)) {
+    quoteEl.innerHTML = data.reviews
+      .map((r) => `<figure class="quote-card">
+        <span class="quote-mark" aria-hidden="true">"</span>
+        <blockquote>${escapeHtml(r.text)}</blockquote>
+        <figcaption>
+          <span class="avatar">${escapeHtml(r.initial)}</span>
+          <span class="reviewer-meta"><strong>${escapeHtml(r.name)}</strong><small>Google'da doğrulandı</small></span>
+        </figcaption>
+      </figure>`)
+      .join('');
+  }
+
+  // FAQ
+  const faqEl = document.getElementById('faq-list');
+  if (faqEl && Array.isArray(data.faq)) {
+    faqEl.innerHTML = data.faq
+      .map((f, i) => `<details class="faq-item"${i === 0 ? ' open' : ''}><summary>${escapeHtml(f.q)}</summary><p>${escapeHtml(f.a)}</p></details>`)
+      .join('');
+  }
+
+  window.__siteContent = data;
+}
+
+function initMain() {
 // ---------- Loader ----------
 const loader = document.getElementById('loader');
 function hideLoader() {
@@ -354,8 +451,15 @@ if (form) {
       `Tarih: ${encodeURIComponent(data.get('date'))}%0A` +
       `Saat: ${encodeURIComponent(data.get('time'))}%0A` +
       `Telefon: ${encodeURIComponent(data.get('phone'))}`;
-    window.open(`https://wa.me/905347049081?text=${message}`, '_blank', 'noopener');
+    const waNumber = (window.__siteContent && window.__siteContent.contact && window.__siteContent.contact.whatsappNumber) || '905347049081';
+    window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank', 'noopener');
     const success = document.getElementById('form-success');
     if (success) success.classList.add('is-visible');
   });
 }
+} // end initMain
+
+loadSiteContent()
+  .then(renderSiteContent)
+  .catch((e) => console.error('content.json yüklenemedi, sayfadaki statik içerik kullanılıyor.', e))
+  .finally(initMain);

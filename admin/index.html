@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com; base-uri 'self'; form-action 'self'; object-src 'none';" />
+<title>Yönetim Paneli — Feyza D. Beauty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="admin.css?v=1" />
+</head>
+<body>
+
+<header class="a-header">
+  <div class="a-header-inner">
+    <div class="a-brand">Feyza D. <span>Yönetim Paneli</span></div>
+    <div class="a-header-actions">
+      <span class="a-status" id="conn-status">Bağlı değil</span>
+      <button type="button" class="a-btn a-btn-ghost" id="logout-btn" hidden>Çıkış Yap</button>
+    </div>
+  </div>
+</header>
+
+<!-- TOKEN GATE -->
+<section class="a-gate" id="gate">
+  <div class="a-gate-card">
+    <h1>Siteye Giriş</h1>
+    <p class="a-gate-desc">
+      Bu panel değişikliklerinizi doğrudan web sitenizin GitHub deposuna kaydeder.
+      Devam etmek için, aşağıdaki adımlarla yalnızca bu siteye özel, yazma izinli bir
+      <strong>GitHub erişim anahtarı (token)</strong> oluşturmanız gerekiyor.
+    </p>
+    <ol class="a-steps">
+      <li><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">GitHub → Fine-grained token oluştur</a> sayfasını açın.</li>
+      <li>"Resource owner": <strong>frostaqemelih</strong>, "Repository access" → <strong>Only select repositories</strong> → <strong>duzce-feyza-d-beauty</strong> seçin.</li>
+      <li>"Repository permissions" içinde <strong>Contents</strong> iznini <strong>Read and write</strong> yapın. Başka hiçbir izin gerekmez.</li>
+      <li>Token'ı oluşturup kopyalayın ve aşağıya yapıştırın.</li>
+    </ol>
+    <div class="a-field">
+      <label for="token-input">GitHub Token</label>
+      <input type="password" id="token-input" placeholder="github_pat_..." autocomplete="off" />
+    </div>
+    <button type="button" class="a-btn a-btn-primary" id="connect-btn">Bağlan</button>
+    <p class="a-gate-note">
+      Bu anahtar yalnızca tarayıcınızın hafızasında (localStorage) saklanır ve yalnızca
+      GitHub'ın kendi sunucusuna (api.github.com) gönderilir — başka hiçbir yere iletilmez.
+      Yine de bu anahtarı kimseyle paylaşmayın; bilgisayarınızı başkasıyla paylaşıyorsanız
+      işiniz bitince "Çıkış Yap" ile anahtarı temizleyin.
+    </p>
+    <p class="a-gate-error" id="gate-error" hidden></p>
+  </div>
+</section>
+
+<!-- MAIN PANEL -->
+<main class="a-main" id="panel" hidden>
+
+  <div class="a-toast" id="toast" hidden></div>
+
+  <nav class="a-tabs">
+    <button class="a-tab is-active" data-tab="contact">İletişim &amp; Puan</button>
+    <button class="a-tab" data-tab="services">Hizmetler</button>
+    <button class="a-tab" data-tab="gallery">Galeri</button>
+    <button class="a-tab" data-tab="reviews">Yorumlar</button>
+    <button class="a-tab" data-tab="faq">Sık Sorulanlar</button>
+  </nav>
+
+  <!-- CONTACT -->
+  <section class="a-panel is-active" data-panel="contact">
+    <h2>İletişim Bilgileri</h2>
+    <div class="a-grid">
+      <div class="a-field">
+        <label for="f-phone-display">Telefon (görünen)</label>
+        <input type="text" id="f-phone-display" placeholder="0534 704 90 81" />
+      </div>
+      <div class="a-field">
+        <label for="f-phone-tel">Telefon (arama linki, tel:+90...)</label>
+        <input type="text" id="f-phone-tel" placeholder="tel:+905347049081" />
+      </div>
+      <div class="a-field">
+        <label for="f-wa-number">WhatsApp Numarası (başında 90 ile, boşluksuz)</label>
+        <input type="text" id="f-wa-number" placeholder="905347049081" />
+      </div>
+      <div class="a-field a-field-full">
+        <label for="f-address">Adres</label>
+        <input type="text" id="f-address" placeholder="Aziziye, İstanbul Cd. No:151 C, 81010 Düzce" />
+      </div>
+      <div class="a-field a-field-full">
+        <label for="f-address-short">Adres (kısa, footer için)</label>
+        <input type="text" id="f-address-short" placeholder="Aziziye, İstanbul Cd. No:151 C, Düzce" />
+      </div>
+      <div class="a-field">
+        <label for="f-pluscode">Plus Code</label>
+        <input type="text" id="f-pluscode" placeholder="Plus Code R4RQ+4J" />
+      </div>
+      <div class="a-field">
+        <label for="f-hours">Çalışma Saati Notu</label>
+        <input type="text" id="f-hours" placeholder="Açık · Kapanış saati 20:30" />
+      </div>
+      <div class="a-field a-field-full">
+        <label for="f-maps-embed">Google Haritalar — Gömülü Harita URL'si</label>
+        <input type="text" id="f-maps-embed" />
+      </div>
+      <div class="a-field a-field-full">
+        <label for="f-maps-dir">Google Haritalar — Yol Tarifi URL'si</label>
+        <input type="text" id="f-maps-dir" />
+      </div>
+      <div class="a-field a-field-full">
+        <label for="f-maps-place">Google Haritalar — İşletme Sayfası URL'si</label>
+        <input type="text" id="f-maps-place" />
+      </div>
+    </div>
+
+    <h2 class="a-mt">Google Puanı</h2>
+    <div class="a-grid">
+      <div class="a-field">
+        <label for="f-rating-value">Ortalama Puan (ör. 4.7)</label>
+        <input type="number" id="f-rating-value" step="0.1" min="0" max="5" />
+      </div>
+      <div class="a-field">
+        <label for="f-rating-count">Yorum Sayısı</label>
+        <input type="number" id="f-rating-count" step="1" min="0" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="a-panel" data-panel="services">
+    <h2>Hizmet Kategorileri</h2>
+    <p class="a-hint">Kategori sırası, sitedeki sekme sırasıyla aynıdır. Bir kategoriyi silerseniz içindeki hizmetler de silinir.</p>
+    <div id="category-list" class="a-cat-list"></div>
+    <button type="button" class="a-btn a-btn-line" id="add-category-btn">+ Kategori Ekle</button>
+
+    <h2 class="a-mt">Hizmetler</h2>
+    <div id="service-items-list" class="a-item-list"></div>
+    <div class="a-add-row">
+      <select id="new-item-cat"></select>
+      <button type="button" class="a-btn a-btn-line" id="add-item-btn">+ Hizmet Ekle</button>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="a-panel" data-panel="gallery">
+    <h2>Atölyeden Kareler</h2>
+    <p class="a-hint">Yeni bir fotoğraf yüklediğinizde, "Kaydet ve Yayınla" dediğinizde görsel de otomatik olarak siteye yüklenir.</p>
+    <div id="gallery-grid" class="a-gallery-grid"></div>
+    <div class="a-add-gallery">
+      <div class="a-field">
+        <label for="new-photo-file">Yeni Fotoğraf</label>
+        <input type="file" id="new-photo-file" accept="image/*" />
+      </div>
+      <div class="a-field">
+        <label for="new-photo-caption">Başlık</label>
+        <input type="text" id="new-photo-caption" placeholder="ör. Kirpik Lifting" />
+      </div>
+      <button type="button" class="a-btn a-btn-line" id="add-photo-btn">+ Galeriye Ekle</button>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="a-panel" data-panel="reviews">
+    <h2>Google Yorumları</h2>
+    <p class="a-hint">Yalnızca gerçek, işletmeye ait Google yorumlarını ekleyin.</p>
+    <div id="review-list" class="a-item-list"></div>
+    <button type="button" class="a-btn a-btn-line" id="add-review-btn">+ Yorum Ekle</button>
+  </section>
+
+  <!-- FAQ -->
+  <section class="a-panel" data-panel="faq">
+    <h2>Sık Sorulan Sorular</h2>
+    <div id="faq-editor-list" class="a-item-list"></div>
+    <button type="button" class="a-btn a-btn-line" id="add-faq-btn">+ Soru Ekle</button>
+  </section>
+
+  <div class="a-savebar">
+    <a href="https://frostaqemelih.github.io/duzce-feyza-d-beauty/" target="_blank" rel="noopener noreferrer" class="a-btn a-btn-ghost">Siteyi Görüntüle ↗</a>
+    <button type="button" class="a-btn a-btn-primary" id="save-btn">Kaydet ve Yayınla</button>
+  </div>
+
+</main>
+
+<script src="admin.js?v=1"></script>
+</body>
+</html>

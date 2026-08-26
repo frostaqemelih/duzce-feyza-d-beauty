@@ -1,0 +1,79 @@
+{
+  "contact": {
+    "phoneDisplay": "0534 704 90 81",
+    "phoneTelHref": "tel:+905347049081",
+    "whatsappUrl": "https://wa.me/905347049081",
+    "whatsappNumber": "905347049081",
+    "address": "Aziziye, İstanbul Cd. No:151 C, 81010 Düzce",
+    "addressShort": "Aziziye, İstanbul Cd. No:151 C, Düzce",
+    "plusCode": "Plus Code R4RQ+4J",
+    "hoursNote": "Açık · Kapanış saati 20:30",
+    "mapsEmbedUrl": "https://www.google.com/maps?q=D%C3%BCzce+Feyza+D.+Beauty,+Aziziye,+%C4%B0stanbul+Cd.+No:151+C,+81010+D%C3%BCzce&ll=40.840294,31.139005&z=16&output=embed",
+    "mapsDirUrl": "https://www.google.com/maps/dir/?api=1&destination=D%C3%BCzce%20Feyza%20D.%20Beauty%2C%20Aziziye%2C%20%C4%B0stanbul%20Cd.%20No%3A151%20C%2C%2081010%20D%C3%BCzce",
+    "mapsPlaceUrl": "https://www.google.com/maps/place/D%C3%BCzce+Feyza+D.+Beauty/@40.8403837,31.1391689,53m/data=!3m1!1e3!4m6!3m5!1s0x409d9fd4e00702ed:0x2aed1abb42dc3071!8m2!3d40.840294!4d31.1390048!16s%2Fg%2F11vsyrw37l!5m1!1e1?entry=ttu"
+  },
+  "rating": {
+    "value": 4.7,
+    "count": 53
+  },
+  "services": {
+    "categories": [
+      { "key": "lazer", "label": "Lazer" },
+      { "key": "zayiflama", "label": "Zayıflama Cihazları" },
+      { "key": "cilt", "label": "Cilt Bakımı" },
+      { "key": "makyaj", "label": "Kalıcı Makyaj & Göz" },
+      { "key": "sac", "label": "Saç Bakımı" },
+      { "key": "tirnak", "label": "Tırnak" }
+    ],
+    "items": [
+      { "cat": "lazer", "name": "Lazer Epilasyon", "desc": "Modern cihazlarla kalıcı ve konforlu tüy azaltma.", "meta": "Salonumuzdan" },
+
+      { "cat": "zayiflama", "name": "Thin Slim Bölgesel İncelme", "desc": "Bölgesel yağlanma ve inceltme cihazı.", "meta": "Cihaz" },
+      { "cat": "zayiflama", "name": "Vacu Activ", "desc": "Vakumlu yürüme ve koşu bandı ile bölgesel incelme.", "meta": "Cihaz" },
+      { "cat": "zayiflama", "name": "Rollshape", "desc": "Ozon terapisi, kolajen ve kromaterapi destekli bölgesel incelme.", "meta": "Cihaz" },
+      { "cat": "zayiflama", "name": "EMFIT", "desc": "Doğum sonrası kas sıkılaştırma ve karın bölgesi toparlama.", "meta": "Cihaz" },
+      { "cat": "zayiflama", "name": "İnfrashape", "desc": "Yatay bisiklet teknolojisiyle vücut şekillendirme.", "meta": "Cihaz" },
+
+      { "cat": "cilt", "name": "Hydrafacial Cilt Bakımı", "desc": "Derinlemesine temizlik ve nemlendirme ile canlanan cilt.", "meta": "Cilt Bakımı" },
+      { "cat": "cilt", "name": "Wish Pro", "desc": "Cilt sıkılaştırma ve gençleştirme.", "meta": "Cilt Bakımı" },
+      { "cat": "cilt", "name": "Çatlak Tedavisi", "desc": "Gerdirme izleri ve çatlaklar için özel bakım.", "meta": "Cilt Bakımı" },
+      { "cat": "cilt", "name": "Bölgesel Beyazlatma", "desc": "Hassas bölgelerde ton eşitleme.", "meta": "Cilt Bakımı" },
+      { "cat": "cilt", "name": "Revcell Örümcek Ağı", "desc": "İplik teknolojisiyle cilt sıkılaştırma ve yenileme.", "meta": "Cilt Bakımı" },
+
+      { "cat": "makyaj", "name": "Microblading & İpek Kirpik", "desc": "Doğal görünümlü kaş tasarımı ve kirpik uygulaması.", "meta": "Kalıcı Makyaj" },
+      { "cat": "makyaj", "name": "Dipliner", "desc": "Kalıcı eyeliner uygulaması.", "meta": "Kalıcı Makyaj" },
+      { "cat": "makyaj", "name": "Kirpik Lifting", "desc": "Kendi kirpiklerinize doğal kıvrım ve hacim.", "meta": "Kalıcı Makyaj" },
+
+      { "cat": "sac", "name": "Saç Mezoterapisi", "desc": "Saç köklerini güçlendiren canlandırıcı bakım.", "meta": "Saç Bakımı" },
+
+      { "cat": "tirnak", "name": "Nail Art Çalışmaları", "desc": "Aleyna Hanım'ın elinden özel tasarım tırnak sanatı.", "meta": "Aleyna Hanım" },
+      { "cat": "tirnak", "name": "Protez Tırnak ve Nail Art", "desc": "Uzun ömürlü, özenli protez tırnak uygulaması.", "meta": "Aleyna Hanım" }
+    ]
+  },
+  "gallery": [
+    { "src": "images/lazer-epilasyon-real.webp", "alt": "Lazer epilasyon odamız", "caption": "Lazer Epilasyon" },
+    { "src": "images/nail-art-real.webp", "alt": "Nail art çalışması", "caption": "Nail Art" },
+    { "src": "images/protez-tirnak-real.webp", "alt": "Protez tırnak çalışması", "caption": "Protez Tırnak" },
+    { "src": "images/microblading-real.webp", "alt": "Microblading ve ipek kirpik uygulaması", "caption": "Microblading & Kirpik" },
+    { "src": "images/hydrafacial-real.webp", "alt": "Hydrafacial cilt bakımı uygulaması", "caption": "Cilt Bakımı" },
+    { "src": "images/lifting-real.webp", "alt": "Kirpik lifting uygulaması", "caption": "Kirpik Lifting" },
+    { "src": "images/dipliner-real.webp", "alt": "Dipliner kalıcı eyeliner uygulaması", "caption": "Dipliner" },
+    { "src": "images/catlak-real.webp", "alt": "Çatlak tedavisi uygulaması", "caption": "Çatlak Tedavisi" },
+    { "src": "images/wishpro-real.webp", "alt": "Wish Pro cilt sıkılaştırma sonucu", "caption": "Wish Pro" },
+    { "src": "images/sacmezo-real.webp", "alt": "Saç mezoterapisi sonucu", "caption": "Saç Mezoterapisi" },
+    { "src": "images/vacu-activ-real.webp", "alt": "Vacu Activ cihazı", "caption": "Vacu Activ" },
+    { "src": "images/revcell-real.webp", "alt": "Revcell örümcek ağı ürünleri", "caption": "Revcell Örümcek Ağı" }
+  ],
+  "reviews": [
+    { "name": "Aslı Davran", "initial": "A", "text": "Kaş ve dudak renklendirme işlemi için Melda hanıma çok teşekkür ederim, mükemmel oldu. Ayrıca protez tırnakta Aleyna hanım harika işler yapıyor, tüm işlemlerimden çok memnunum. İyi ki siz varsınız ❣️" },
+    { "name": "Emir Zenbil", "initial": "E", "text": "Lazer yaptırdım, cilt bakımına geldim, manikür ve kaş alımı işlemi yaptırdım. İşinde gerçekten profesyoneller, Düzce'de gidilecek tek adres diyebilirim benim için 👍" },
+    { "name": "Zeynep Zenbil", "initial": "Z", "text": "Düzce'nin en güvenilir ve samimi merkezi. İşlem kalitesi, cilt bakımı ürünleri, zayıflama cihazları ve lazer işlemi yaptırdım, çok memnun kaldım." }
+  ],
+  "faq": [
+    { "q": "Randevu nasıl alabilirim?", "a": "Bu sayfadaki \"Randevu Al\" formunu doldurup WhatsApp üzerinden gönderebilir, ya da doğrudan 0534 704 90 81 numaralı telefonu arayabilirsiniz." },
+    { "q": "Hangi hizmetleri sunuyorsunuz?", "a": "Lazer epilasyon, cilt bakımı, kaş & dudak renklendirme, protez tırnak & manikür, zayıflama cihazları ve kaş alımı & şekillendirme hizmetleri sunuyoruz. Detaylar için Hizmetler bölümüne göz atabilirsiniz." },
+    { "q": "Salonunuz tam olarak nerede?", "a": "Aziziye, İstanbul Cd. No:151 C, 81010 Düzce adresindeyiz. Atölye bölümündeki haritadan yol tarifi alabilirsiniz." },
+    { "q": "Hijyen konusunda neler yapıyorsunuz?", "a": "Danışanlarımız Google yorumlarında salonumuzu sıklıkla \"temiz ve hijyenik\" olarak tanımlıyor; bu bizim için önceliklerimizin başında geliyor." },
+    { "q": "Randevumu değiştirmem veya iptal etmem gerekirse ne yapmalıyım?", "a": "Lütfen mümkün olan en kısa sürede 0534 704 90 81 numaralı telefondan bize ulaşın, size en uygun yeni saati birlikte planlayalım." }
+  ]
+}

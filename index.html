@@ -84,7 +84,7 @@
       <a href="#yorumlar"><span>Yorumlar</span></a>
       <a href="#randevu"><span>Randevu</span></a>
     </nav>
-    <a href="tel:+905347049081" class="header-phone" data-magnetic>0534 704 90 81</a>
+    <a href="tel:+905347049081" class="header-phone" data-magnetic data-bind-attr="href:contact.phoneTelHref" data-bind-text="contact.phoneDisplay">0534 704 90 81</a>
   </div>
 </header>
 
@@ -114,8 +114,8 @@
         <a href="#hizmetler" class="btn btn-line" data-magnetic><span>Hizmetleri Gör</span></a>
       </div>
       <div class="hero-trust" data-reveal>
-        <span class="stars" style="--rating:4.7" aria-hidden="true"><span class="stars-bg">★★★★★</span><span class="stars-fg">★★★★★</span></span>
-        <p class="trust-text"><strong><span class="count-up" data-target="4.7" data-decimals="1">0</span> / 5</strong><span class="count-up" data-target="53">0</span> Google yorumu · Düzce</p>
+        <span class="stars" style="--rating:4.7" data-bind-rating aria-hidden="true"><span class="stars-bg">★★★★★</span><span class="stars-fg">★★★★★</span></span>
+        <p class="trust-text"><strong><span class="count-up" data-target="4.7" data-decimals="1" data-bind-target="rating.value">0</span> / 5</strong><span class="count-up" data-target="53" data-bind-target="rating.count">0</span> Google yorumu · Düzce</p>
       </div>
     </div>
 
@@ -151,7 +151,7 @@
         <h2 class="section-title" data-split>Uzman ellerde bakım</h2>
       </div>
 
-      <div class="service-tabs" data-reveal role="tablist">
+      <div class="service-tabs" id="service-tabs" data-reveal role="tablist">
         <button class="tab-btn is-active" data-cat="lazer" type="button">Lazer</button>
         <button class="tab-btn" data-cat="zayiflama" type="button">Zayıflama Cihazları</button>
         <button class="tab-btn" data-cat="cilt" type="button">Cilt Bakımı</button>
@@ -322,7 +322,7 @@
           <p class="eyebrow" data-reveal>İndeks — Konum</p>
           <h2 class="section-title" data-split>Aziziye'de, kolay ulaşılır</h2>
         </div>
-        <p class="section-note" data-reveal>Aziziye, İstanbul Cd. No:151 C, 81010 Düzce · Plus Code R4RQ+4J</p>
+        <p class="section-note" data-reveal><span data-bind-text="contact.address">Aziziye, İstanbul Cd. No:151 C, 81010 Düzce</span> · <span data-bind-text="contact.plusCode">Plus Code R4RQ+4J</span></p>
       </div>
 
       <div class="location-layout">
@@ -330,6 +330,7 @@
           <iframe
             title="Düzce Feyza D. Beauty konumu"
             src="https://www.google.com/maps?q=D%C3%BCzce+Feyza+D.+Beauty,+Aziziye,+%C4%B0stanbul+Cd.+No:151+C,+81010+D%C3%BCzce&ll=40.840294,31.139005&z=16&output=embed"
+            data-bind-attr="src:contact.mapsEmbedUrl"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
@@ -337,13 +338,13 @@
         <div class="location-card" data-reveal>
           <div class="info-item">
             <svg viewBox="0 0 24 24" class="icon"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            Aziziye, İstanbul Cd. No:151 C, 81010 Düzce
+            <span data-bind-text="contact.address">Aziziye, İstanbul Cd. No:151 C, 81010 Düzce</span>
           </div>
           <div class="info-item">
             <svg viewBox="0 0 24 24" class="icon"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            Açık · Kapanış saati 20:30
+            <span data-bind-text="contact.hoursNote">Açık · Kapanış saati 20:30</span>
           </div>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=D%C3%BCzce%20Feyza%20D.%20Beauty%2C%20Aziziye%2C%20%C4%B0stanbul%20Cd.%20No%3A151%20C%2C%2081010%20D%C3%BCzce" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block" data-magnetic>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=D%C3%BCzce%20Feyza%20D.%20Beauty%2C%20Aziziye%2C%20%C4%B0stanbul%20Cd.%20No%3A151%20C%2C%2081010%20D%C3%BCzce" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block" data-magnetic data-bind-attr="href:contact.mapsDirUrl">
               <span>Yol Tarifi Al</span>
               <svg viewBox="0 0 24 24" class="icon"><path d="M7 7h10v10M7 17 17 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -359,10 +360,10 @@
       <div class="reviews-head">
         <div class="stat-block" data-reveal>
           <p class="eyebrow">İndeks — Danışanlarımız</p>
-          <p class="stat-huge"><span class="count-up" data-target="4.7" data-decimals="1">0</span></p>
-          <span class="stars" style="--rating:4.7" aria-hidden="true"><span class="stars-bg">★★★★★</span><span class="stars-fg">★★★★★</span></span>
-          <p class="stat-label"><span class="count-up" data-target="53">0</span> Google yorumu · ortalama puan</p>
-          <a href="https://www.google.com/maps/place/D%C3%BCzce+Feyza+D.+Beauty/@40.8403837,31.1391689,53m/data=!3m1!1e3!4m6!3m5!1s0x409d9fd4e00702ed:0x2aed1abb42dc3071!8m2!3d40.840294!4d31.1390048!16s%2Fg%2F11vsyrw37l!5m1!1e1?entry=ttu" target="_blank" rel="noopener noreferrer" class="stat-link">Tüm yorumları gör →</a>
+          <p class="stat-huge"><span class="count-up" data-target="4.7" data-decimals="1" data-bind-target="rating.value">0</span></p>
+          <span class="stars" style="--rating:4.7" data-bind-rating aria-hidden="true"><span class="stars-bg">★★★★★</span><span class="stars-fg">★★★★★</span></span>
+          <p class="stat-label"><span class="count-up" data-target="53" data-bind-target="rating.count">0</span> Google yorumu · ortalama puan</p>
+          <a href="https://www.google.com/maps/place/D%C3%BCzce+Feyza+D.+Beauty/@40.8403837,31.1391689,53m/data=!3m1!1e3!4m6!3m5!1s0x409d9fd4e00702ed:0x2aed1abb42dc3071!8m2!3d40.840294!4d31.1390048!16s%2Fg%2F11vsyrw37l!5m1!1e1?entry=ttu" target="_blank" rel="noopener noreferrer" class="stat-link" data-bind-attr="href:contact.mapsPlaceUrl">Tüm yorumları gör →</a>
         </div>
 
         <div class="quote-rail-wrap">
@@ -414,11 +415,11 @@
           <h2 class="section-title" data-split>Yerinizi ayırtın</h2>
           <p class="section-desc">Formu doldurun, WhatsApp'a hazır mesajla yönlendirilin — en kısa sürede size dönüş yapalım.</p>
           <div class="appointment-direct">
-            <a href="tel:+905347049081" class="direct-link" data-magnetic>
+            <a href="tel:+905347049081" class="direct-link" data-magnetic data-bind-attr="href:contact.phoneTelHref">
               <svg viewBox="0 0 24 24" class="icon"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-              0534 704 90 81
+              <span data-bind-text="contact.phoneDisplay">0534 704 90 81</span>
             </a>
-            <span class="direct-note">Açık · Kapanış saati 20:30</span>
+            <span class="direct-note" data-bind-text="contact.hoursNote">Açık · Kapanış saati 20:30</span>
           </div>
         </div>
 
@@ -473,7 +474,7 @@
         <p class="eyebrow" data-reveal>İndeks — Sıkça Sorulanlar</p>
         <h2 class="section-title" data-split>Aklınıza takılanlar</h2>
       </div>
-      <div class="faq-list" data-reveal>
+      <div class="faq-list" id="faq-list" data-reveal>
         <details class="faq-item" open>
           <summary>Randevu nasıl alabilirim?</summary>
           <p>Bu sayfadaki "Randevu Al" formunu doldurup WhatsApp üzerinden gönderebilir, ya da doğrudan 0534 704 90 81 numaralı telefonu arayabilirsiniz.</p>
@@ -501,8 +502,8 @@
 </main>
 
 <div class="mobile-cta-bar">
-  <a href="tel:+905347049081" class="mcta-call">Ara</a>
-  <a href="https://wa.me/905347049081" target="_blank" rel="noopener noreferrer" class="mcta-wa">WhatsApp</a>
+  <a href="tel:+905347049081" class="mcta-call" data-bind-attr="href:contact.phoneTelHref">Ara</a>
+  <a href="https://wa.me/905347049081" target="_blank" rel="noopener noreferrer" class="mcta-wa" data-bind-attr="href:contact.whatsappUrl">WhatsApp</a>
 </div>
 
 <footer class="footer">
@@ -511,8 +512,8 @@
       <p class="footer-logo">Feyza D. <span>Beauty</span></p>
       <p class="footer-tagline">Düzce'de güzelliğin adresi</p>
       <div class="footer-rating">
-        <span class="stars" style="--rating:4.7" aria-hidden="true"><span class="stars-bg">★★★★★</span><span class="stars-fg">★★★★★</span></span>
-        <span>4,7 · 53 Google yorumu</span>
+        <span class="stars" style="--rating:4.7" data-bind-rating aria-hidden="true"><span class="stars-bg">★★★★★</span><span class="stars-fg">★★★★★</span></span>
+        <span><span data-bind-text="rating.valueDisplay">4,7</span> · <span data-bind-text="rating.count">53</span> Google yorumu</span>
       </div>
     </div>
     <div class="footer-col">
@@ -524,9 +525,9 @@
     </div>
     <div class="footer-col">
       <h5>İletişim</h5>
-      <a href="tel:+905347049081">0534 704 90 81</a>
-      <a href="https://www.google.com/maps/place/D%C3%BCzce+Feyza+D.+Beauty/@40.8403837,31.1391689,53m/data=!3m1!1e3!4m6!3m5!1s0x409d9fd4e00702ed:0x2aed1abb42dc3071!8m2!3d40.840294!4d31.1390048!16s%2Fg%2F11vsyrw37l!5m1!1e1?entry=ttu" target="_blank" rel="noopener noreferrer">Aziziye, İstanbul Cd. No:151 C, Düzce</a>
-      <a href="https://www.google.com/maps/dir/?api=1&destination=D%C3%BCzce%20Feyza%20D.%20Beauty%2C%20Aziziye%2C%20%C4%B0stanbul%20Cd.%20No%3A151%20C%2C%2081010%20D%C3%BCzce" target="_blank" rel="noopener noreferrer">Yol Tarifi Al →</a>
+      <a href="tel:+905347049081" data-bind-attr="href:contact.phoneTelHref" data-bind-text="contact.phoneDisplay">0534 704 90 81</a>
+      <a href="https://www.google.com/maps/place/D%C3%BCzce+Feyza+D.+Beauty/@40.8403837,31.1391689,53m/data=!3m1!1e3!4m6!3m5!1s0x409d9fd4e00702ed:0x2aed1abb42dc3071!8m2!3d40.840294!4d31.1390048!16s%2Fg%2F11vsyrw37l!5m1!1e1?entry=ttu" target="_blank" rel="noopener noreferrer" data-bind-attr="href:contact.mapsPlaceUrl" data-bind-text="contact.addressShort">Aziziye, İstanbul Cd. No:151 C, Düzce</a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=D%C3%BCzce%20Feyza%20D.%20Beauty%2C%20Aziziye%2C%20%C4%B0stanbul%20Cd.%20No%3A151%20C%2C%2081010%20D%C3%BCzce" target="_blank" rel="noopener noreferrer" data-bind-attr="href:contact.mapsDirUrl">Yol Tarifi Al →</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -552,6 +553,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="script.js?v=12"></script>
+<script src="script.js?v=13"></script>
 </body>
 </html>
