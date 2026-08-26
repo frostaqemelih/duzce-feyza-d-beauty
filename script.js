@@ -118,11 +118,19 @@ if (hasGSAP) {
 
   // Scroll-hero: as the hero scrolls out, its copy/card recede and dim so the
   // exit reads as one continuous camera move into the next section rather than
-  // a hard cut.
-  gsap.to(['.hero-copy', '.hero-servcard', '.hero-idx'], {
-    y: -70, opacity: 0, scale: 0.97, ease: 'none',
-    scrollTrigger: { trigger: '.hero-wrap', start: 'top top', end: 'bottom top', scrub: true },
-  });
+  // a hard cut. Registration is delayed until the hero-servcard/hero-idx
+  // entrance fade (their own [data-reveal] transition) has settled — a plain
+  // .to() reads the element's CURRENT opacity as its "from" value at the
+  // moment the tween is built, so registering it immediately could snapshot
+  // opacity mid-fade and freeze the card/idx marker invisible forever at
+  // scroll top. Registering after the fade completes keeps that entrance
+  // animation intact while still fixing the race.
+  setTimeout(() => {
+    gsap.to(['.hero-copy', '.hero-servcard', '.hero-idx'], {
+      y: -70, opacity: 0, scale: 0.97, ease: 'none',
+      scrollTrigger: { trigger: '.hero-wrap', start: 'top top', end: 'bottom top', scrub: true },
+    });
+  }, 1200);
 
   // Tie the six numbered sections together: each section's giant background
   // numeral drifts at a different speed than its content (a shared depth cue
