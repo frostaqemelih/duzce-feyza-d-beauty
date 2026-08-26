@@ -35,6 +35,12 @@
   --dur-sm: 0.25s;
   --dur-md: 0.45s;
   --dur-lg: 0.8s;
+
+  /* Solid pill/button fill that must contrast with --background itself (not
+     just with --card). --ink alone breaks on the dark-lux theme, where the
+     page background is already near-black. */
+  --contrast-bg: var(--ink);
+  --contrast-text: #fff;
 }
 
 /* ---- Pudra Pembe ---- */
@@ -65,6 +71,8 @@
   --gold: #d4af6a;
   --gold-light: #ecd39c;
   --rose: #c96b74;
+  --contrast-bg: var(--foreground);
+  --contrast-text: var(--background);
 }
 
 html, body, .header, .section, .footer, .faq-item, .quote-card, .location-card {
@@ -303,7 +311,7 @@ noscript ~ .loader, .no-js .loader { display: none; }
   cursor: pointer; transition: all 0.25s ease;
 }
 .tab-btn:hover { border-color: var(--gold); color: var(--gold); }
-.tab-btn.is-active { background: var(--ink); border-color: var(--ink); color: #fff; }
+.tab-btn.is-active { background: var(--contrast-bg); border-color: var(--contrast-bg); color: var(--contrast-text); }
 
 /* Service list — editorial text list, no imagery */
 .service-list { border-top: 1px solid var(--border); }
@@ -579,7 +587,7 @@ noscript ~ .loader, .no-js .loader { display: none; }
   flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.45rem;
   padding: 0.75rem; border-radius: 0.7rem; font-size: 0.85rem; font-weight: 600;
 }
-.mobile-cta-bar a.mcta-call { background: var(--ink); color: #fff; }
+.mobile-cta-bar a.mcta-call { background: var(--contrast-bg); color: var(--contrast-text); }
 .mobile-cta-bar a.mcta-wa { background: var(--gold); color: var(--ink); }
 body { padding-bottom: 0; }
 @media (max-width: 767px) { body { padding-bottom: 4.5rem; } }
